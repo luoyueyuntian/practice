@@ -1,0 +1,19 @@
+.manage-nav-container {
+    height: 33px;
+    padding-left: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.manage-nav-container a {
+    display: inline-block;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: #333;
+}
+
+.manage-nav-container a.active {
+    border-width: 4px 1px 1px 1px;
+    border-style: solid;
+    border-color: #0099ff #ddd #fff #ddd;
+    border-radius: 6px 6px 0 0;
+}

@@ -1,0 +1,42 @@
+.crisis-list-container {
+    margin-left: 15px;
+    width: 400px;
+}
+
+.crisis-list-container li {
+    height: 26px;
+    line-height: 26px;
+    margin: 8px 0;
+    list-style: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    /* word-spacing: -1em; */
+    vertical-align: top;
+    text-overflow: ellipsis;
+}
+
+.crisis-list-container li span.badge {
+    display: inline-block;
+    width: 60px;
+    text-align: center;
+    background-color: #095872;
+    color: #fff;
+}
+
+.crisis-list-container li span.content {
+    /* display: inline-block; */
+    /* width: 240px; */
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-spacing: 0;
+}
+
+.crisis-list-container li span.del-btn {
+    float: right;
+    width: 100px;
+    text-align: center;
+    background-color: #095872;
+    color: #fff;
+}

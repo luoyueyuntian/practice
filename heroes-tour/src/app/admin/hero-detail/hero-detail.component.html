@@ -1,0 +1,18 @@
+<ul>
+    <li>
+        <span>id:</span>{{hero.id}}
+    </li>
+    <li>
+        <span>name:</span>
+        <input type="text" [(ngModel)]="hero.name" />
+    </li>
+    <li>
+        <button (click)="save()">Save</button>
+        <button (click)="reset()">Reset</button>
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let msg of receiveMsg">
+        <span>{{msg.id}}</span>{{msg.message}}
+    </li>
+</ul>

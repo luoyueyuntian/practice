@@ -1,0 +1,16 @@
+<div>
+    <ul>
+        <li>
+            <input type="text" [(ngModel)]="newHeroName">
+            <span (click)="addHero()">Add</span>
+        </li>
+        <li *ngFor="let hero of heroes|async">
+            <span class="badge">{{hero.id}}</span>
+            <span (click)="selectHero(hero)">{{hero.name}}</span>
+            <span class="del-btn" (click)="deleteHero(hero)">Delete</span>
+        </li>
+    </ul>
+</div>
+<div *ngIf="selectedHero">
+    <app-hero-detail></app-hero-detail>
+</div>

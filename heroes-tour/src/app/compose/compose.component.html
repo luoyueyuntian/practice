@@ -1,0 +1,21 @@
+<div class="message-container">
+    <span class="close-icon" (click)="close()">X</span>
+    <div class="form-section">
+        <span class="message-label">To:</span>
+        <select class="hero-list" [(ngModel)]="addressee">
+        <ng-container *ngFor="let hero of heroes">
+          <option [ngValue]="hero">
+            {{hero.name}}
+          </option>
+        </ng-container>
+      </select>
+    </div>
+    <div class="form-section">
+        <span class="message-label">Info:</span>
+        <textarea class="message-input" cols="30" rows="10" [(ngModel)]="message"></textarea>
+    </div>
+    <div class="edit-container">
+        <button (click)="sendMessage()">Save</button>
+        <button (click)="close()">Cancel</button>
+    </div>
+</div>

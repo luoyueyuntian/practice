@@ -1,0 +1,8 @@
+<ul class="list">
+    <li *ngFor="let hero of heroes|async" (click)="viewDetail(hero)">
+        <span class="badge">{{hero.id}}</span>{{hero.name}}
+    </li>
+</ul>
+<div class="search-container">
+    <app-hero-search></app-hero-search>
+</div>
