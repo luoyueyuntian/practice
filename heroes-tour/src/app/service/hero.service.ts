@@ -50,10 +50,8 @@ export class HeroService {
         name: newHeroName,
         id: this.unusedId++
       });
-      return Observable.of(HEROES);
-    } else {
-      Observable.throw(`${newHeroName} is exist`);
     }
+    return Observable.of(HEROES);
   }
   deleteHero(hero: Hero): Observable<Hero[]> {
     const index = this.findHeroById(hero.id);

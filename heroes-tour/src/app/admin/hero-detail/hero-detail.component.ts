@@ -1,5 +1,6 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Location } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/switchMap';
 
@@ -20,8 +21,9 @@ export class HeroDetailComponent implements OnDestroy {
   private observer: any;
   constructor(
     private router: Router,
-    private heroService: HeroService,
     private route: ActivatedRoute,
+    private location: Location,
+    private heroService: HeroService,
     private msgSErvice: MessageService
   ) {
     this.route.paramMap
@@ -43,6 +45,9 @@ export class HeroDetailComponent implements OnDestroy {
   }
   reset(): void {
     this.hero.name = this.curHero.name;
+  }
+  back(): void {
+    this.location.back();
   }
   ngOnDestroy() {
     this.observer.unsubscribe();

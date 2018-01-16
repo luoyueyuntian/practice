@@ -25,11 +25,11 @@ export class HeroManageComponent implements OnInit {
   deleteHero(hero: Hero): void {
     this.heroes = this.heroService.deleteHero(hero);
   }
-  addHero(newHeroName: string): void {
-    if (newHeroName === '') {
+  addHero(): void {
+    if (this.newHeroName === '') {
       return;
     }
-    this.heroService.addHero(newHeroName)
+    this.heroService.addHero(this.newHeroName)
       .map(status => {
         this.heroes = this.heroService.getHeroes();
         this.newHeroName = '';
