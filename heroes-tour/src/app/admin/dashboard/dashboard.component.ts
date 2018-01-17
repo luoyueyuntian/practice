@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-const echarts = require('echarts');
+import { init, dispose } from 'echarts/src/echarts';
 import 'echarts/src/chart/pie';
 import 'echarts/src/component/legend';
 import 'echarts/src/component/tooltip';
@@ -18,6 +18,11 @@ class SumaryData {
   message: number;
 }
 
+// 告诉TypeScript this.pie有setOption方法
+class Echarts {
+  setOption: (opt: object) => Echarts;
+}
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -30,7 +35,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     crisis: 0,
     message: 0
   };
-  private pie: object;
+  private pie: Echarts;
   constructor(
     private heroServer: HeroService,
     private crisisServer: CrisisService,
@@ -61,7 +66,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
   ngOnInit() {
     const container = document.getElementById('pieContainer');
-    this.pie = echarts.init(container);
+    this.pie = init(container);
     this.pie.setOption({
       title: {
         text: '汇总信息',
@@ -112,7 +117,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
     this.msgObserver.unsubscribe();
-    this.pie.dispose();
+    dispose(this.pie);
   }
 
 }

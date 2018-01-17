@@ -19,6 +19,11 @@
     border-bottom: 3px solid #0099ff;
 }
 
+.main-nav-container nav a.popup {
+    font-weight: bold;
+    color: #095872;
+}
+
 .main {
     margin: 15px 0;
 }
