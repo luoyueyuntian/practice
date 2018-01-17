@@ -1,4 +1,4 @@
-export class Message {
+export default class Message {
     id: number;
     auth?: string;
     message: string;

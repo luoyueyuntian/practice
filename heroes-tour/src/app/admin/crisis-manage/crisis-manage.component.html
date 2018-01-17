@@ -1,5 +1,9 @@
 <div>
     <ul class="crisis-list-container">
+        <li class="add-hero-container">
+            <span class="add-btn" (click)="addCrisis()">Add</span>
+            <input type="text" [(ngModel)]="newCrisisName">
+        </li>
         <li *ngFor="let crisis of crisisLibary|async">
             <div class="badge">{{crisis.id}}</div>
             <div class="del-btn" (click)="deleteCrisis(crisis)">Delete</div>

@@ -1,13 +1,13 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
 import Crisis from '../model/crisis';
-import {CRISES} from '../mock/crisis-mock';
+import { CRISES } from '../mock/crisis-mock';
 
 @Injectable()
 export class CrisisService {
-  private unusedId : number;
+  private unusedId = -1;
   constructor() {
     CRISES.forEach(crisis => {
       if (crisis.id > this.unusedId) {
@@ -16,7 +16,7 @@ export class CrisisService {
       this.unusedId++;
     });
   }
-  private existCrisis(crisisName) : boolean {
+  private existCrisis(crisisName): boolean {
     let exist = false;
     CRISES.forEach(crisis => {
       if (crisis.name === crisisName) {
@@ -25,28 +25,28 @@ export class CrisisService {
     });
     return exist;
   }
-  private findCrisisPos(destCrisis : Crisis) : number {
+  private findCrisisPos(destCrisisId: number): number {
     let pos = -1;
-    CRISES.forEach((crisis : Crisis, index : number) => {
-      if (crisis.name === destCrisis.name && crisis.id === destCrisis.id) {
+    CRISES.forEach((crisis: Crisis, index: number) => {
+      if (crisis.id === destCrisisId) {
         pos = index;
       }
     });
     return pos;
   }
-  getCrisisLibary() : Observable < Crisis[] > {
+  getCrisisLibary(): Observable<Crisis[]> {
     return Observable.of(CRISES);
   }
-  getCrisisById(id : number) : Crisis {
+  getCrisisById(id: number): Crisis {
     let destCrisis: Crisis;
-    CRISES.forEach((crisis : Crisis) => {
+    CRISES.forEach((crisis: Crisis) => {
       if (crisis.id === id) {
         destCrisis = crisis;
       }
     });
     return destCrisis;
   }
-  addCrisis(newCrisisName : string) : Observable < Crisis[] > {
+  addCrisis(newCrisisName: string): Observable<Crisis[]> {
     const hasExist: boolean = this.existCrisis(newCrisisName);
     if (!hasExist) {
       CRISES.push({
@@ -54,6 +54,11 @@ export class CrisisService {
         id: this.unusedId++
       });
     }
+    return Observable.of(CRISES);
+  }
+  deleteCrisis(crisisId: number): Observable<Crisis[]> {
+    const pos = this.findCrisisPos(crisisId);
+    CRISES.splice(pos, 1);
     return Observable.of(CRISES);
   }
 }

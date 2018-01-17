@@ -8,7 +8,7 @@
     line-height: 26px;
     margin: 8px 0;
     list-style: none;
-    border: 1px solid #ddd;
+    border: 1px solid #095872;
     border-radius: 8px;
     overflow: hidden;
     vertical-align: top;
@@ -20,6 +20,27 @@
     clear: both;
     height: 0;
     visibility: hidden;
+}
+
+.crisis-list-container li.add-hero-container input {
+    margin-left: 8px;
+    width: 320px;
+    height: 28px;
+    padding-left: 5px;
+    line-height: 28px;
+    border-width: 0;
+    vertical-align: top;
+    outline: 0;
+}
+
+.crisis-list-container li.add-hero-container .add-btn {
+    float: right;
+    width: 60px;
+    height: 28px;
+    line-height: 28px;
+    color: #fff;
+    background-color: #095872;
+    text-align: center;
 }
 
 .crisis-list-container li div.badge {

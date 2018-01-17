@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 
-import { Message } from './../model/message';
+import Message from './../model/message';
 import { Subject } from 'rxjs/Subject';
 
 @Injectable()

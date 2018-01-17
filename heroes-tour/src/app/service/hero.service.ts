@@ -55,7 +55,7 @@ export class HeroService {
   }
   deleteHero(hero: Hero): Observable<Hero[]> {
     const index = this.findHeroById(hero.id);
-    HEROES.slice(index, 1);
+    HEROES.splice(index, 1);
     return Observable.of(HEROES);
   }
   search(nameFragment: string): Observable<Hero[]> {
