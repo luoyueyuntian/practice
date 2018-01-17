@@ -5,9 +5,9 @@
             <input type="text" [(ngModel)]="newHeroName">
         </li>
         <li *ngFor="let hero of heroes|async">
-            <span class="del-btn" (click)="deleteHero(hero)">Delete</span>
-            <span class="badge">{{hero.id}}</span>
-            <span (click)="selectHero(hero)">{{hero.name}}</span>
+            <div class="badge">{{hero.id}}</div>
+            <div class="del-btn" (click)="deleteHero(hero)">Delete</div>
+            <div class="hero-content" (click)="selectHero(hero)">{{hero.name}}</div>
         </li>
     </ul>
 </div>

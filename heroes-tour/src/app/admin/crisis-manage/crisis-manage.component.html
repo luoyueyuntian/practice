@@ -1,9 +1,9 @@
 <div>
     <ul class="crisis-list-container">
         <li *ngFor="let crisis of crisisLibary|async">
-            <span class="del-btn" (click)="deleteCrisis(crisis)">Delete</span>
-            <span class="badge">{{crisis.id}}</span>
-            <span class="content" (click)="showDetail(crisis)">{{crisis.name}}</span>
+            <div class="badge">{{crisis.id}}</div>
+            <div class="del-btn" (click)="deleteCrisis(crisis)">Delete</div>
+            <div class="content" (click)="showDetail(crisis)">{{crisis.name}}</div>
         </li>
     </ul>
 </div>

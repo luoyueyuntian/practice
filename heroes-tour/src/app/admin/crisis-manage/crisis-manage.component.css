@@ -1,6 +1,6 @@
 .crisis-list-container {
     margin-left: 15px;
-    width: 400px;
+    width: 500px;
 }
 
 .crisis-list-container li {
@@ -11,29 +11,36 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    /* word-spacing: -1em; */
     vertical-align: top;
-    text-overflow: ellipsis;
 }
 
-.crisis-list-container li span.badge {
-    display: inline-block;
+.crisis-list-container li::after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.crisis-list-container li div.badge {
+    float: left;
     width: 60px;
     text-align: center;
     background-color: #095872;
     color: #fff;
 }
 
-.crisis-list-container li span.content {
-    /* display: inline-block; */
-    /* width: 240px; */
-    /* overflow: hidden; */
+.crisis-list-container li div.content {
+    margin-left: 60px;
+    margin-right: 100px;
+    padding-left: 5px;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     word-spacing: 0;
 }
 
-.crisis-list-container li span.del-btn {
+.crisis-list-container li div.del-btn {
     float: right;
     width: 100px;
     text-align: center;

@@ -5,7 +5,7 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class AuthService {
-  private loginStatus = true;
+  private loginStatus = false;
   private redirectUrl = '';
   constructor() { }
   getLoginStatus(): boolean {
