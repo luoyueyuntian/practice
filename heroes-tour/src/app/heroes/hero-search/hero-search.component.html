@@ -1,4 +1,11 @@
-<input #searchInput type="text" class="search-input" (keyup)="search(searchInput.value)">
+<div class="search-container">
+    <div class="search-btn-container">
+        <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    <div class="input-container">
+        <input #searchInput type="text" class="search-input" (keyup)="search(searchInput.value)">
+    </div>
+</div>
 <div>
     <ul class="search-result-list">
         <li *ngFor="let hero of result|async" (click)="viewDetail(hero)">{{hero.name}}</li>

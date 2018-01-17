@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
@@ -11,16 +12,17 @@ import { HeroService } from './../../service/hero.service';
   styleUrls: ['./hero-manage.component.css']
 })
 export class HeroManageComponent implements OnInit {
-  selectedHero: Hero;
   heroes: Observable<Hero[]>;
   newHeroName: string;
   constructor(
+    private router: Router,
     private heroService: HeroService
   ) {
     this.heroes = this.heroService.getHeroes();
   }
-  selectHero(hero: Hero): void {
-    this.selectedHero = hero;
+  viewDetail(hero: Hero): void {
+    const heroId = hero.id;
+    this.router.navigate(['/admin', heroId]);
   }
   deleteHero(hero: Hero): void {
     this.heroes = this.heroService.deleteHero(hero);

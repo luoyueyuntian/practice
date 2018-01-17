@@ -7,10 +7,7 @@
         <li *ngFor="let hero of heroes|async">
             <div class="badge">{{hero.id}}</div>
             <div class="del-btn" (click)="deleteHero(hero)">Delete</div>
-            <div class="hero-content" (click)="selectHero(hero)">{{hero.name}}</div>
+            <div class="hero-content" (click)="viewDetail(hero)">{{hero.name}}</div>
         </li>
     </ul>
-</div>
-<div *ngIf="selectedHero">
-    <app-hero-detail></app-hero-detail>
 </div>

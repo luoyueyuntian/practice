@@ -9,12 +9,18 @@ import { CrisisService } from './../../service/crisis.service';
 export class CrisisManageComponent implements OnInit {
   crisisLibary: Observable<Crisis[]>;
   newCrisisName: string;
-  constructor(private crisisService: CrisisService, private router: Router) {
+  constructor(
+    private router: Router,
+    private crisisService: CrisisService
+  ) {
     this.crisisLibary = this
       .crisisService
       .getCrisisLibary();
   }
-  showDetail(crisis: Crisis): void { }
+  showDetail(crisis: Crisis): void {
+    const crisisId = crisis.id;
+    this.router.navigate(['heroes-manage/detail', crisisId]);
+  }
   deleteCrisis(crisis: Crisis) {
     this.crisisLibary = this.crisisService.deleteCrisis(crisis.id);
   }
