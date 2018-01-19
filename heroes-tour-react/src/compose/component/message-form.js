@@ -4,10 +4,10 @@ import AddressList from './address-list';
 
 export default class MessageForm extends Component {
     render() {
-        const { heroes } = this.props;
+        const { heroes, hideContactPanel } = this.props;
         return (
             <div className="message-container">
-				<span className="close-icon" >×</span>
+				<span className="close-icon" onClick={hideContactPanel}>×</span>
 				<div className="form-section">
 		        	<span className="message-label">To:</span>
 		        	<AddressList heroes={heroes}/>
@@ -18,7 +18,7 @@ export default class MessageForm extends Component {
 		      	</div>
 		      	<div className = "edit-container" >
 		      		<button >Send</button>
-			        <button >Cancel</button>
+			        <button  onClick={hideContactPanel}>Cancel</button>
 			    </div>
 			</div>
         )

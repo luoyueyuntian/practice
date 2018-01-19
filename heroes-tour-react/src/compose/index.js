@@ -8,15 +8,20 @@ import './compose.css';
 
 class Compose extends Component {
     render() {
-        const { heroes } = this.props;
-        return (
-            <MessageForm heroes={heroes}/>
-        );
+        const { heroes, showContact, hideContactPanel } = this.props;
+        if (showContact) {
+            return (
+                <MessageForm heroes={heroes} hideContactPanel={hideContactPanel}/>
+            );
+        } else {
+            return null;
+        }
     }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    heroes: state.heroes
+    heroes: state.heroes,
+    showContact: state.showContact
 })
 const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators(action, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(Compose);

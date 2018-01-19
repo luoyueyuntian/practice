@@ -1,5 +1,25 @@
-body {
+*{
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+}
+.container{
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-container{
+  padding-left: 15px;
+  border-bottom: 2px solid #eee;
+}
+.nav-container a{
+  display: inline-block;
+    padding: 5px 8px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-container a.active{
+  border-bottom: 3px solid #0099ff;
 }
