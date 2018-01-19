@@ -28,5 +28,6 @@ export default {
     isLogin: false,
     curHeroId: null,
     curCrisisId: null,
-    showContact: false
+    showContact: false,
+    filterValue: ''
 }

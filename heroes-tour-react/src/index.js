@@ -5,6 +5,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import createHistory from 'history/createBrowserHistory';
 import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
 
+import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import allReducer from './rootReducer';
