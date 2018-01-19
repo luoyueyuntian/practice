@@ -9,7 +9,6 @@ angular官方教程英雄管理工具虽然是一个很好的项目，但却使�
 + react-router 4.2.0
 
 #### 安装运行
-<pre><code>npm install -g @angular/cli</code></pre>
 在src所在目录下运行CMD工具，执行以下命令，下载相关依赖。
 <pre><code>npm install</code></pre>
 继续执行以下命令启动本地服务器
