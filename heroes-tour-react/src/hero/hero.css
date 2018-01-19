@@ -1,0 +1,24 @@
+ul.list {
+    width: 400px;
+}
+
+ul.list li {
+    width: 100%;
+    height: 32px;
+    margin: 5px 0;
+    overflow: hidden;
+    line-height: 32px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    list-style: none;
+    cursor: pointer;
+}
+
+ul.list li span.badge {
+    display: inline-block;
+    width: 60px;
+    margin-right: 4px;
+    text-align: center;
+    background-color: #095872;
+    color: #fff;
+}
