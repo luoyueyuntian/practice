@@ -17,6 +17,7 @@ export default class MessageForm extends Component {
         const author = this.props.isLogin ? 'admin' : 'visitor';
         sendMessage(nextMsgId, this.msgInput.value, author, this.addressInput.value);
         updateNextMessageId();
+        this.msgInput.value = '';
     }
     render() {
         const { heroes, hideContactPanel } = this.props;
