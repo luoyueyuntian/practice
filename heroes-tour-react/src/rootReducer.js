@@ -1,7 +1,7 @@
-import { editHero, setCurHero, setFilterValue } from './hero/reducer';
-import { editCrisisLibary, setCurCrisis } from './crisis/reducer';
+import { editHero, setCurHero, setFilterValue, updateNextHeroId } from './hero/reducer';
+import { editCrisisLibary, setCurCrisis, updateNextCrisisId } from './crisis/reducer';
 import loginReducer from './login/reducer';
-import { sendMsg, changeContactVisible } from './compose/reducer';
+import { sendMsg, changeContactVisible, updateNextMessageId } from './compose/reducer';
 
 export default {
     heroes: editHero,
@@ -11,5 +11,8 @@ export default {
     curCrisisId: setCurCrisis,
     msgs: sendMsg,
     showContact: changeContactVisible,
-    filterValue: setFilterValue
+    filterValue: setFilterValue,
+    nextHeroId: updateNextHeroId,
+    nextCrisisId: updateNextCrisisId,
+    nextMsgIs: updateNextMessageId
 };

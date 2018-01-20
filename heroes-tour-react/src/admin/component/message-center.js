@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import MessageList from './message-center/message-list';
 
-export default class MessageCenter extends Component {
+
+class MessageCenter extends Component {
     render() {
-        return (<div>MessageCenter</div>);
+        const { msgs } = this.props;
+        return (
+            <MessageList msgs={msgs} />
+        );
     }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+    msgs: state.msgs
+});
+
+const mapDispatchToProps = (dispatch, ownProps) => ({});
+
+export default connect(mapStateToProps)(MessageCenter);

@@ -1,9 +1,9 @@
-import { ADD_HERO, DELETE_HERO, UPDATE_HERO, SELECT_HERO, UN_SELECT_HERO, FILTER_HEROES } from './actionTypes';
+import { ADD_HERO, DELETE_HERO, UPDATE_HERO, SELECT_HERO, UN_SELECT_HERO, FILTER_HEROES, UPDATE_NEXT_HERO_ID } from './actionTypes';
 
-const addHero = (originHeroes, newHeroName) => {
+const addHero = (originHeroes, newHeroName, newHeroId) => {
     return originHeroes.concat({
         name: newHeroName,
-        id: 22
+        id: newHeroId
     });
 }
 
@@ -30,7 +30,7 @@ const unSelectHero = () => null;
 export const editHero = (state = [], action) => {
     switch (action.type) {
         case ADD_HERO:
-            return addHero(state, action.newHeroName);
+            return addHero(state, action.newHeroName, action.id);
         case DELETE_HERO:
             return deleteHero(state, action.heroId);
         case UPDATE_HERO:
@@ -58,4 +58,13 @@ export const setFilterValue = (state = '', action) => {
         default:
             return state;
     }
-}
+};
+
+export const updateNextHeroId = (state = 0, action) => {
+    switch (action.type) {
+        case UPDATE_NEXT_HERO_ID:
+            return state + 1;
+        default:
+            return state;
+    }
+};

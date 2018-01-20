@@ -12,7 +12,6 @@ import './admin.css';
 
 class Admin extends Component {
     render() {
-        const { isLogin } = this.props;
         return (
             <div>
         		<nav className="manage-nav-container">

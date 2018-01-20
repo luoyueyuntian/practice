@@ -1,4 +1,4 @@
-import { ADD_CRISIS, DELETE_CRISIS, UPDATE_CRISIS, SELECT_CRISIS, UN_SELECT_CRISIS } from './actionTypes';
+import { ADD_CRISIS, DELETE_CRISIS, UPDATE_CRISIS, SELECT_CRISIS, UN_SELECT_CRISIS, UPDATE_NEXT_CRISIS_ID } from './actionTypes';
 
 const addCrisis = (state, newHeroName) => {
     return state.concat({
@@ -42,6 +42,15 @@ export const setCurCrisis = (state = -1, action) => {
             return action.crisisId;
         case UN_SELECT_CRISIS:
             return -1;
+        default:
+            return state;
+    }
+};
+
+export const updateNextCrisisId = (state = 0, action) => {
+    switch (action.type) {
+        case UPDATE_NEXT_CRISIS_ID:
+            return state + 1;
         default:
             return state;
     }

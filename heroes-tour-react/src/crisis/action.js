@@ -1,4 +1,4 @@
-import { ADD_CRISIS, DELETE_CRISIS, UPDATE_CRISIS, SELECT_CRISIS, UN_SELECT_CRISIS } from './actionTypes';
+import { ADD_CRISIS, DELETE_CRISIS, UPDATE_CRISIS, SELECT_CRISIS, UN_SELECT_CRISIS, UPDATE_NEXT_CRISIS_ID } from './actionTypes';
 
 export const addCrisis = (newHeroName) => {
     return {
@@ -33,4 +33,10 @@ export const unSelectCrisis = () => {
     return {
         type: UN_SELECT_CRISIS
     }
+};
+
+export const updateNextCrisisId = () => {
+    return {
+        type: UPDATE_NEXT_CRISIS_ID
+    };
 };

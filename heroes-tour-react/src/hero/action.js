@@ -1,9 +1,10 @@
-import { ADD_HERO, DELETE_HERO, UPDATE_HERO, SELECT_HERO, UN_SELECT_HERO, FILTER_HEROES } from './actionTypes';
+import { ADD_HERO, DELETE_HERO, UPDATE_HERO, SELECT_HERO, UN_SELECT_HERO, FILTER_HEROES, UPDATE_NEXT_HERO_ID } from './actionTypes';
 
-export const addHero = (newHeroName) => {
+export const addHero = (newHeroName, id) => {
     return {
         type: ADD_HERO,
-        newHeroName: newHeroName
+        newHeroName: newHeroName,
+        id: id
     };
 };
 
@@ -40,4 +41,10 @@ export const filterHeroes = (filterValue) => {
         type: FILTER_HEROES,
         filterValue
     }
-}
+};
+
+export const updateNextHeroId = () => {
+    return {
+        type: UPDATE_NEXT_HERO_ID
+    };
+};

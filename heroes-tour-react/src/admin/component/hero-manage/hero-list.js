@@ -5,7 +5,7 @@ import AddHeroItem from './add-hero';
 
 export default class HeroManageList extends Component {
     render() {
-        const { heroes, addHero, deleteHero, updateHero, selectHero, unSelectHero } = this.props;
+        const { heroes, nextHeroId, addHero, deleteHero, updateHero, selectHero, unSelectHero, updateNextHeroId } = this.props;
         const heroItems = heroes.map(hero => (
             <HeroManageItem 
             key={hero.id} 
@@ -17,7 +17,11 @@ export default class HeroManageList extends Component {
         ));
         return (
             <ul className="hero-list-container">
-                <AddHeroItem addHero={addHero}/>
+                <AddHeroItem 
+                addHero={addHero}
+                nextHeroId={nextHeroId}
+                updateNextHeroId={updateNextHeroId}
+                />
                 {heroItems}
             </ul>
         );

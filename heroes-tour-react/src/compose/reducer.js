@@ -1,12 +1,12 @@
-import { SEND_MESSAGE, SWITCH_VISIBLE, SHOW_CONTACT, HIDE_CONTACT } from './actionTypes';
+import { SEND_MESSAGE, SWITCH_VISIBLE, SHOW_CONTACT, HIDE_CONTACT, UPDATE_NEXT_MESSAGE_ID } from './actionTypes';
 
 const generateMsgId = () => {
     return Math.floor(Math.random() * 100) + 1;
 }
 
-const send = (state, msg, author, address) => {
+const send = (state, id, msg, author, address) => {
     return state.concat({
-        id: generateMsgId(),
+        id: id,
         auth: author,
         message: msg,
         addressee: address
@@ -16,7 +16,7 @@ const send = (state, msg, author, address) => {
 export const sendMsg = (state = [], action) => {
     switch (action.type) {
         case SEND_MESSAGE:
-            return send(state, action.msg, action.author, action.address);
+            return send(state, action.id, action.msg, action.author, action.address);
         default:
             return state;
     }
@@ -28,6 +28,15 @@ export const changeContactVisible = (state = false, action) => {
             return true;
         case HIDE_CONTACT:
             return false;
+        default:
+            return state;
+    }
+};
+
+export const updateNextMessageId = (state = 0, action) => {
+    switch (action.type) {
+        case UPDATE_NEXT_MESSAGE_ID:
+            return state + 1;
         default:
             return state;
     }

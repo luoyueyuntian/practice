@@ -29,5 +29,8 @@ export default {
     curHeroId: null,
     curCrisisId: null,
     showContact: false,
-    filterValue: ''
+    filterValue: '',
+    nextHeroId: 21,
+    nextCrisisId: 5,
+    nextMsgIs: 1
 }

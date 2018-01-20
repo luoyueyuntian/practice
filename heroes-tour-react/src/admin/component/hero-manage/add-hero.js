@@ -6,8 +6,9 @@ export default class AddHeroItem extends Component {
         this.createHero = this.createHero.bind(this);
     }
     createHero() {
-        const { addHero } = this.props;
-        addHero(this.newHeroInput.value);
+        const { addHero, nextHeroId, updateNextHeroId } = this.props;
+        addHero(this.newHeroInput.value, nextHeroId);
+        updateNextHeroId();
     }
     render() {
         return (
