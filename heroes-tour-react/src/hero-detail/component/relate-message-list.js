@@ -5,9 +5,14 @@ export default class RelateMessageList extends Component {
         const { msgs } = this.props;
         let msgList = '';
         if (msgs.length === 0) {
-            msgList = (<li >none message!</li>);
+            msgList = (<li className="empty-message">none message!бнбн</li>);
         } else {
-            msgList = msgs.map((msg) => (<li key={msg.id}>{msg.message}</li>));
+            msgList = msgs.map((msg) => (
+                <li key={msg.id}>
+	                <span className="msg-author">{msg.auth}</span>
+	                <span className="msg-content">{msg.message}</span>
+            	</li>
+            ));
         }
         return (
             <ul className="message-list-container">

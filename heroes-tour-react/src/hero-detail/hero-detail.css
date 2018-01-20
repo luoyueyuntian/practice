@@ -1,11 +1,18 @@
-.back-btn {
-    padding: 5px 6px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #333;
-    cursor: pointer;
-    font-size: 16px;
+.hero-detail-container{
+    width: 500px;
+    display: inline-block;
+}
+
+.hero-detail-container h3{
+    font-weight: 500;
+    line-height: 2;
+    border-bottom: 1px solid #ddd;
+}
+
+.hero-detail-container h3 span.title{
+    display: inline-block;
+    padding: 0 8px;
+    border-bottom: 2px solid #ff4e00;
 }
 
 .edit-form-container {
@@ -15,6 +22,7 @@
 
 .edit-form-container li {
     height: 26px;
+    margin:8px 0;
     line-height: 26px;
     list-style: none;
 }
@@ -22,12 +30,12 @@
 .edit-blocking span {
     display: inline-block;
     width: 60px;
-    margin-right: 5px;
+    margin-right: 8px;
     text-align: right;
 }
 
 .edit-blocking input {
-    width: 200px;
+    width: 300px;
     height: 26px;
     line-height: 26px;
     padding-left: 5px;
@@ -43,11 +51,12 @@
 }
 
 .edit-btn-container {
-    padding-left: 50px;
-    padding-top: 12px;
+    margin-top: 12px;
+    text-align: center;
 }
 
 .edit-btn {
+    margin: 8px;
     padding: 5px 6px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -58,8 +67,66 @@
 
 .message-list-container {
     padding-left: 15px;
+    margin-bottom: 20px;
 }
 
 .message-list-container li {
+    margin: 5px 0;
+    height: 26px;
+    overflow: hidden;
     list-style: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.message-list-container li:after{
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.message-list-container li.empty-message{
+    border: 0;
+    text-align: center;
+    color: red;
+}
+
+.msg-author{
+    box-sizing: border-box;
+    float: left;
+    width: 80px;
+    height: 26px;
+    line-height: 26px;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-spacing: 0;
+}
+
+.msg-content{
+    box-sizing: border-box;
+    float: left;
+    padding-left: 8px;
+    width: 403px;
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-spacing: 0;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 5px 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    font-size: 16px;
 }

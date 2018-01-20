@@ -9,11 +9,16 @@ export default class HeroDetail extends Component {
         const { hero, msgs, unSelectHero, updateHero } = this.props;
 
         return (
-            <div>
-		    	<button className="back-btn" onClick={unSelectHero}>Back</button>
-				<h2>Hero Detail Info</h2>
+            <div className="hero-detail-container">
+				<h3>
+					<span className="title">Hero Detail Info</span>
+				</h3>
 				<HeroEditForm hero={hero} unSelectHero={unSelectHero} updateHero={updateHero} />
+				<h3>
+					<span className="title">Recevied Message</span>
+				</h3>
 				<RelateMessageList msgs={msgs} />
+		    	<div className="back-btn" onClick={unSelectHero}><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</div>
 		    </div>
         );
     }
