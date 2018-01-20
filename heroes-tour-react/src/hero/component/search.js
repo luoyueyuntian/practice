@@ -19,7 +19,7 @@ export default class Search extends Component {
 				        <i className="fa fa-search" aria-hidden="true"></i>
 				    </div>
 				    <div className="input-container">
-				        <input type="text" className="search-input" onKeyUp={(e) => filterHeroes(e.target.value)} />
+				        <input type="text" className="search-input" defaultValue={filterValue} onKeyUp={(e) => filterHeroes(e.target.value)} />
 				    </div>
 				</div>
 				<div>

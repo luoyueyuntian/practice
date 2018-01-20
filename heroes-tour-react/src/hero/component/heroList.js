@@ -4,11 +4,17 @@ import Search from './search';
 
 export default class HeroList extends Component {
     render() {
-        const { heroes, filterValue, filterHeroes } = this.props;
+        const { heroes, selectHero, filterValue, filterHeroes, push } = this.props;
         return (
             <div>
 	            <ul className="list">
-	        		{heroes.map(hero => <HeroItem key={hero.id} hero={hero}/>)}
+	        		{heroes.map(hero => <HeroItem 
+                        key={'hero'+hero.id} 
+                        hero={hero} 
+                        selectHero={selectHero}
+                        push={push}
+                        />
+                        )}
 	        	</ul>
 	        	<div className="search-panel">
 		        	<Search 

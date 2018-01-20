@@ -23,10 +23,6 @@ const updateHero = (originHeroes, heroId, heroNewName) => {
     })
 }
 
-const selectHero = (heroId) => heroId;
-
-const unSelectHero = () => null;
-
 export const editHero = (state = [], action) => {
     switch (action.type) {
         case ADD_HERO:
@@ -40,12 +36,12 @@ export const editHero = (state = [], action) => {
     }
 };
 
-export const setCurHero = (state = null, action) => {
+export const setCurHero = (state = -1, action) => {
     switch (action.type) {
         case SELECT_HERO:
-            return selectHero(state, action.heroId);
+            return action.heroId;
         case UN_SELECT_HERO:
-            return unSelectHero();
+            return -1;
         default:
             return state;
     }

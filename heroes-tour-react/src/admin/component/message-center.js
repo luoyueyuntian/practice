@@ -16,6 +16,4 @@ const mapStateToProps = (state, ownProps) => ({
     msgs: state.msgs
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({});
-
 export default connect(mapStateToProps)(MessageCenter);
