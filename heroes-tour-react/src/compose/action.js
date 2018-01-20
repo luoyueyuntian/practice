@@ -1,4 +1,4 @@
-import { SEND_MESSAGE, SWITCH_VISIBLE, SHOW_CONTACT, HIDE_CONTACT, UPDATE_NEXT_MESSAGE_ID } from './actionTypes';
+import { SEND_MESSAGE, SHOW_CONTACT, HIDE_CONTACT, UPDATE_NEXT_MESSAGE_ID } from './actionTypes';
 
 export const sendMessage = (id, msg, author, address) => {
     return {

@@ -1,8 +1,4 @@
-import { SEND_MESSAGE, SWITCH_VISIBLE, SHOW_CONTACT, HIDE_CONTACT, UPDATE_NEXT_MESSAGE_ID } from './actionTypes';
-
-const generateMsgId = () => {
-    return Math.floor(Math.random() * 100) + 1;
-}
+import { SEND_MESSAGE, SHOW_CONTACT, HIDE_CONTACT, UPDATE_NEXT_MESSAGE_ID } from './actionTypes';
 
 const send = (state, id, msg, author, address) => {
     return state.concat({

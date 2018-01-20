@@ -18,7 +18,7 @@ export default class MessageForm extends Component {
         updateNextMessageId();
     }
     render() {
-        const { heroes, hideContactPanel, sendMessage } = this.props;
+        const { heroes, hideContactPanel } = this.props;
         return (
             <div className="message-container">
 				<span className="close-icon" onClick={hideContactPanel}>×</span>

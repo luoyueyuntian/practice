@@ -4,7 +4,7 @@ import Search from './search';
 
 export default class HeroList extends Component {
     render() {
-        const { heroes, addHero, filterValue, filterHeroes } = this.props;
+        const { heroes, filterValue, filterHeroes } = this.props;
         return (
             <div>
 	            <ul className="list">

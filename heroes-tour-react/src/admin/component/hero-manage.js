@@ -10,14 +10,13 @@ class HeroManage extends Component {
         this.props.unSelectHero();
     }
     render() {
-        const { heroes, nextHeroId, addHero, deleteHero, updateHero, selectHero, updateNextHeroId } = this.props;
+        const { heroes, nextHeroId, addHero, deleteHero, selectHero, updateNextHeroId } = this.props;
         return (
             <HeroManageList
             heroes={heroes}
             nextHeroId={nextHeroId}
             addHero={addHero}
             deleteHero={deleteHero}
-            updateHero={updateHero}
             selectHero={selectHero}
             unSelectHero={unSelectHero}
             updateNextHeroId={updateNextHeroId}

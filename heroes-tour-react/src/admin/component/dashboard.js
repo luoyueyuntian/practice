@@ -7,20 +7,16 @@ import 'echarts/src/component/tooltip';
 import 'echarts/src/component/title';
 
 class Dashboard extends Component {
-    constructor() {
-        super();
-    }
     componentDidMount() {
-        this.initChart();
-        this.updateChart();
+        this._initChart();
     }
     componentWillReceiveProps() {
-        this.updateChart();
+        this._updateChart();
     }
     componentWillUnmount() {
         dispose(this.pie);
     }
-    initChart() {
+    _initChart() {
         const container = document.getElementById('chartContainer');
         this.pie = init(container);
         this.pie.setOption({
@@ -58,13 +54,13 @@ class Dashboard extends Component {
                         show: true
                     }
                 },
-                data: []
+                data: this._getChartData()
             }
         });
     }
-    updateChart() {
+    _getChartData() {
         const { heroNumber, crisisNumber, messageNumber } = this.props;
-        const data = [{
+        return [{
             name: 'hero',
             value: heroNumber
         }, {
@@ -74,9 +70,12 @@ class Dashboard extends Component {
             name: 'message',
             value: messageNumber
         }];
+
+    }
+    _updateChart() {
         this.pie.setOption({
             series: {
-                data: data
+                data: this._getChartData()
             }
         });
     }
