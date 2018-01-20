@@ -4,7 +4,7 @@ import Search from './search';
 
 export default class HeroList extends Component {
     render() {
-        const { heroes, selectHero, filterValue, filterHeroes, push } = this.props;
+        const { heroes, selectHero, filterValue, filterHeroes } = this.props;
         return (
             <div>
 	            <ul className="list">
@@ -12,7 +12,6 @@ export default class HeroList extends Component {
                         key={'hero'+hero.id} 
                         hero={hero} 
                         selectHero={selectHero}
-                        push={push}
                         />
                         )}
 	        	</ul>

@@ -32,5 +32,5 @@ export default {
     filterValue: '',
     nextHeroId: 21,
     nextCrisisId: 5,
-    nextMsgIs: 1
+    nextMsgId: 1
 }

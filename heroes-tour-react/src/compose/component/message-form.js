@@ -5,16 +5,16 @@ import AddressList from './address-list';
 export default class MessageForm extends Component {
     constructor() {
         super();
-        this.address = '';
-        this.cacheAddress = this.cacheAddress.bind(this);
+        this.addressInput = null;
+        this.uploadAdress = this.uploadAdress.bind(this);
         this.send = this.send.bind(this);
     }
-    cacheAddress(address) {
-        this.address = address;
+    uploadAdress(input) {
+        this.addressInput = input;
     }
     send() {
-        const { nextMsgIs, sendMessage, updateNextMessageId } = this.props;
-        sendMessage(nextMsgIs, this.msgInput.value, 'visitor', this.address);
+        const { nextMsgId, sendMessage, updateNextMessageId } = this.props;
+        sendMessage(nextMsgId, this.msgInput.value, 'visitor', this.addressInput.value);
         updateNextMessageId();
     }
     render() {
@@ -26,7 +26,7 @@ export default class MessageForm extends Component {
 		        	<span className="message-label">To:</span>
 		        	<AddressList
 		            heroes={heroes}
-		            cacheAddress={this.cacheAddress}
+		            uploadAdress={this.uploadAdress}
 		            />
 		    	</div>
 		    	<div className = "form-section" >

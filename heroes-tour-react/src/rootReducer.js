@@ -14,5 +14,5 @@ export default {
     filterValue: setFilterValue,
     nextHeroId: updateNextHeroId,
     nextCrisisId: updateNextCrisisId,
-    nextMsgIs: updateNextMessageId
+    nextMsgId: updateNextMessageId
 };

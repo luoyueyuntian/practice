@@ -11,18 +11,28 @@ class Hero extends Component {
     render() {
         const { heroes, curHeroId, msgs, updateHero, selectHero, unSelectHero, filterValue, filterHeroes } = this.props;
         if (curHeroId !== -1) {
+            const MATCH_ALL = 0;
             let selectHero = {
                 name: '',
                 id: -1
             };
+            let relateMsgs = [];
             heroes.forEach(hero => {
                 if (hero.id === curHeroId) {
                     selectHero = hero;
                 }
-            })
+            });
+            msgs.forEach(msg => {
+                if (msg.addressee == MATCH_ALL) {
+                    relateMsgs.push(msg);
+                }
+                if (msg.addressee == curHeroId) {
+                    relateMsgs.push(msg);
+                }
+            });
             return (<HeroDetail
                 hero={selectHero}
-                msgs={msgs}
+                msgs={relateMsgs}
                 unSelectHero={unSelectHero}
                 updateHero={updateHero}
                 />);

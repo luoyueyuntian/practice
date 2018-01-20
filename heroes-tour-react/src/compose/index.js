@@ -8,12 +8,12 @@ import './compose.css';
 
 class Compose extends Component {
     render() {
-        const { heroes, showContact, nextMsgIs, hideContactPanel, sendMessage, updateNextMessageId } = this.props;
+        const { heroes, showContact, nextMsgId, hideContactPanel, sendMessage, updateNextMessageId } = this.props;
         if (showContact) {
             return (
                 <MessageForm 
                 heroes={heroes} 
-                nextMsgIs={nextMsgIs}
+                nextMsgId={nextMsgId}
                 hideContactPanel={hideContactPanel}
                 sendMessage={sendMessage}
                 updateNextMessageId={updateNextMessageId}
@@ -28,7 +28,7 @@ class Compose extends Component {
 const mapStateToProps = (state, ownProps) => ({
     heroes: state.heroes,
     showContact: state.showContact,
-    nextMsgIs: state.nextMsgIs
+    nextMsgId: state.nextMsgId
 })
 const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators(action, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(Compose);
