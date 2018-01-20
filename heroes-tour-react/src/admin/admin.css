@@ -18,6 +18,13 @@
     border-radius: 6px 6px 0 0;
 }
 
+
+/*Dashboard*/
+#chartContainer{
+    width: 300px;
+    height: 200px;
+}
+
 /*英雄管理*/
 .hero-list-container {
     margin-left: 15px;
