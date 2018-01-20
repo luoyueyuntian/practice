@@ -4,9 +4,15 @@ import CrisisManageItem from './crisi-manage-item';
 
 export default class CrisisManageList extends Component {
     render() {
-        const { crisisLibary } = this.props;
+        const { crisisLibary, addCrisis, deleteCrisis, selectCrisis } = this.props;
         const crisisItems = crisisLibary.map(crisis => (
-            <CrisisManageItem key={crisis.id} crisis={crisis} />
+            <CrisisManageItem
+            key={crisis.id}
+            crisis={crisis}
+            addCrisis={addCrisis}
+            deleteCrisis={deleteCrisis}
+            selectCrisis={selectCrisis}
+            />
         ));
         return (
             <ul className="hero-list-container">

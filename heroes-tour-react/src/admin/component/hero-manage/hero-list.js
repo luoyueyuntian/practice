@@ -5,15 +5,21 @@ import AddHeroItem from './add-hero';
 
 export default class HeroManageList extends Component {
     render() {
-        const { heroes } = this.props;
+        const { heroes, addHero, deleteHero, updateHero, selectHero, unSelectHero } = this.props;
         const heroItems = heroes.map(hero => (
-            <HeroManageItem key={hero.id} hero={hero} />
+            <HeroManageItem 
+            key={hero.id} 
+            hero={hero} 
+            addHero={addHero}
+            deleteHero={deleteHero}
+            selectHero={selectHero}
+            />
         ));
         return (
             <ul className="hero-list-container">
-				<AddHeroItem />
-				{heroItems}
-			</ul>
+                <AddHeroItem addHero={addHero}/>
+                {heroItems}
+            </ul>
         );
     }
 }

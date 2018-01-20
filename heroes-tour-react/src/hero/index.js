@@ -7,13 +7,14 @@ import './hero.css';
 
 class Hero extends Component {
     render() {
-        const { heroes, addHero, deleteHero, filterValue } = this.props;
+        const { heroes, addHero, deleteHero, filterValue, filterHeroes } = this.props;
         return (
             <HeroList
             heroes={heroes}
             addHero={addHero}
             deleteHero={deleteHero}
             filterValue={filterValue}
+            filterHeroes={filterHeroes}
             />
         );
     }

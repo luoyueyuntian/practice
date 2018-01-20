@@ -9,7 +9,7 @@ export default class LoginInput extends Component {
 			        </li>
 			        <li className="login-form">
 			            <span className="login-label">Password:</span>
-			            <input type="text" placeholder="please input you name" />
+			            <input type="text" placeholder="please input password" />
 			        </li>
 			    </ul>);
     }

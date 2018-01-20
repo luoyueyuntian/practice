@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { Route, Switch, Redirect } from 'react-router';
 
@@ -10,7 +10,7 @@ import MessageCenter from './component/message-center';
 
 import './admin.css';
 
-export default class Admin extends Component {
+class Admin extends Component {
     render() {
         const { isLogin } = this.props;
         return (
@@ -32,3 +32,8 @@ export default class Admin extends Component {
         );
     }
 }
+
+const mapStateToProps = (state, ownProps) => ({
+    isLogin: state.isLogin
+})
+export default connect(mapStateToProps)(Admin);
