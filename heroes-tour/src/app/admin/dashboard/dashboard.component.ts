@@ -57,7 +57,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return destData;
   }
   updateMsg(): void {
-    console.log('update ……');
     this.pie.setOption({
       series: {
         data: this.parseData()
@@ -102,7 +101,16 @@ export class DashboardComponent implements OnInit, OnDestroy {
             show: true
           }
         },
-        data: []
+        data: [{
+          name: 'hero',
+          value: 0
+        }, {
+          name: 'crisis',
+          value: 0
+        }, {
+          name: 'message',
+          value: 0
+        }]
       }
     });
     this.heroServer.getHeroes()

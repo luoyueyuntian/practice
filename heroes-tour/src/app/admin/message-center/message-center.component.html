@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="messages.length>0">
     <table class="msg-table">
         <thead>
             <tr>
@@ -18,3 +18,4 @@
         </tbody>
     </table>
 </div>
+<div *ngIf="messages.length===0">no message</div>
