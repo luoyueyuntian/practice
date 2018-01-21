@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 
-class MsgItem extends Component {
-    render() {
-        const { id, message } = this.props.msg;
-        return (
-            <li>
-                <span>{id}</span>
-                <span>{message}</span>
-            </li>
-        );
-    }
-}
+import MessageItem from './message-item';
 
 export default class MessageList extends Component {
+    getAddresseeById(id) {
+        const heroes = this.props.heroes;
+        let addressee = 'unknown';
+        if (id === 0) {
+            return 'All';
+        }
+        heroes.forEach(hero => {
+            if (hero.id === id) {
+                addressee = hero.name;
+            }
+        });
+        return addressee;
+    }
     render() {
         const { msgs } = this.props;
         if (msgs.length === 0) {
@@ -20,10 +23,29 @@ export default class MessageList extends Component {
                 <div>no message</div>
             );
         }
+        const messageList = msgs.map(message => {
+            let msgInfo = {};
+            msgInfo.key = message.id;
+            msgInfo.id = message.id;
+            msgInfo.auth = message.auth;
+            msgInfo.message = message.message;
+            msgInfo.addressee = this.getAddresseeById(message.addressee);
+            return <MessageItem {...msgInfo} />;
+        })
         return (
-            <ul>
-                {msgs.map((msg) => (<MsgItem key={msg.id} msg={msg}/>))}
-            </ul>
+            <table className="msg-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>FROM</th>
+                        <th>TO</th>
+                        <th>MESSAGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {messageList}
+                </tbody>
+            </table>
         );
     }
 }

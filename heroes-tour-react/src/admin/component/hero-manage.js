@@ -26,10 +26,10 @@ class HeroManage extends Component {
                 }
             });
             msgs.forEach(msg => {
-                if (msg.addressee == MATCH_ALL) {
+                if (msg.addressee === MATCH_ALL) {
                     relateMessages.push(msg);
                 }
-                if (msg.addressee == curHeroId) {
+                if (msg.addressee === curHeroId) {
                     relateMessages.push(msg);
                 }
             });

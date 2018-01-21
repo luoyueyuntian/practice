@@ -6,7 +6,7 @@ export default class AddressList extends Component {
         this.props.uploadAdress(this.adddressSelect);
     }
     render() {
-        const { heroes, uploadAdress } = this.props;
+        const { heroes } = this.props;
         const items = heroes.map(hero => (
             <option key={hero.id} value={hero.id}>
     			{hero.name}

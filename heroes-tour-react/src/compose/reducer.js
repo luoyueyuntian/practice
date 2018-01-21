@@ -5,7 +5,7 @@ const send = (state, id, msg, author, addressee) => {
         id: id,
         auth: author,
         message: msg,
-        addressee: addressee
+        addressee: parseInt(addressee, 10)
     })
 }
 

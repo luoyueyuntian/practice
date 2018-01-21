@@ -8,6 +8,9 @@ import './hero.css';
 import HeroDetail from '../hero-detail';
 
 class Hero extends Component {
+    componentWillUnmount() {
+        this.props.unSelectHero();
+    }
     render() {
         const { heroes, curHeroId, msgs, updateHero, selectHero, unSelectHero, filterValue, filterHeroes } = this.props;
         if (curHeroId !== -1) {
@@ -23,10 +26,10 @@ class Hero extends Component {
                 }
             });
             msgs.forEach(msg => {
-                if (msg.addressee == MATCH_ALL) {
+                if (msg.addressee === MATCH_ALL) {
                     relateMsgs.push(msg);
                 }
-                if (msg.addressee == curHeroId) {
+                if (msg.addressee === curHeroId) {
                     relateMsgs.push(msg);
                 }
             });

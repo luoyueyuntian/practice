@@ -4,14 +4,14 @@ import { bindActionCreators } from 'redux';
 
 import CrisisManageList from './crisis-manage/crisis-manage-list';
 
-import { addCrisis, deleteCrisis, updateCrisis, selectCrisis, unSelectCrisis, updateNextCrisisId } from '../../crisis/action';
+import { addCrisis, deleteCrisis, selectCrisis, unSelectCrisis, updateNextCrisisId } from '../../crisis/action';
 
 class CrisisManage extends Component {
     componentWillUnmount() {
         this.props.unSelectCrisis();
     }
     render() {
-        const { crisisLibary, nextCrisisId, addCrisis, deleteCrisis, updateCrisis, selectCrisis, updateNextCrisisId } = this.props;
+        const { crisisLibary, nextCrisisId, addCrisis, deleteCrisis, selectCrisis, updateNextCrisisId } = this.props;
         return (
             <CrisisManageList
             crisisLibary={crisisLibary}
@@ -33,7 +33,6 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = (dispatch, ownProps) => ({
     addCrisis: bindActionCreators(addCrisis, dispatch),
     deleteCrisis: bindActionCreators(deleteCrisis, dispatch),
-    updateCrisis: bindActionCreators(updateCrisis, dispatch),
     selectCrisis: bindActionCreators(selectCrisis, dispatch),
     unSelectCrisis: bindActionCreators(unSelectCrisis, dispatch),
     updateNextCrisisId: bindActionCreators(updateNextCrisisId, dispatch)
