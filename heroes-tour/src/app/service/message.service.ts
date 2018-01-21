@@ -8,20 +8,28 @@ import 'rxjs/add/operator/delay';
 import Message from './../model/message';
 import { Subject } from 'rxjs/Subject';
 
+import { AuthService } from './auth.service';
+
 @Injectable()
 export class MessageService {
   private _messages: Message[] = [];
   private unusedId: number;
   private messages: Subject<Message[]>;
   private relateHeroSubscription: Subscription;
-  constructor() {
+  constructor(
+    private authService: AuthService
+  ) {
     this.unusedId = 0;
     this.messages = new BehaviorSubject([]);
   }
   getMessages(): Observable<Message[]> {
     return this.messages;
   }
-  addMessage(msg: string, auth = 'unknown', addressee = -1): void {
+  addMessage(msg: string, addressee = -1): void {
+    let auth = 'visitor';
+    if (this.authService.getLoginStatus()) {
+      auth = 'admin';
+    }
     this._messages.push({
       id: this.unusedId++,
       auth: auth,

@@ -18,6 +18,7 @@ export class HeroManageComponent implements OnInit {
   newHeroName: string;
   selectedHero: Hero;
   receiveMsg: Message[];
+  modifiedHeroName: string;
   private msgLibary: Message[];
   constructor(
     private router: Router,
@@ -46,7 +47,7 @@ export class HeroManageComponent implements OnInit {
   }
   viewDetail(hero: Hero): void {
     this.selectedHero = hero;
-    this.newHeroName = hero.name;
+    this.modifiedHeroName = hero.name;
     this.refleshReceieveMsg();
   }
   deleteHero(hero: Hero): void {
@@ -61,6 +62,15 @@ export class HeroManageComponent implements OnInit {
         this.heroes = this.heroService.getHeroes();
         this.newHeroName = '';
       });
+  }
+  save(): void {
+    this.selectedHero.name = this.modifiedHeroName;
+    this.modifiedHeroName = '';
+    this.selectedHero = null;
+  }
+  cancel() {
+    this.modifiedHeroName = '';
+    this.selectedHero = null;
   }
   ngOnInit() {
   }

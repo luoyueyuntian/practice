@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 
-const DEFAULT_LOGIN_STATUS = false;
+const DEFAULT_LOGIN_STATUS = true;
 
 @Injectable()
 export class AuthService {

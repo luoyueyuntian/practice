@@ -26,7 +26,7 @@ export class ComposeComponent implements OnInit {
     });
   }
   sendMessage(): void {
-    this.msgService.addMessage(this.message, undefined, this.addressee.id);
+    this.msgService.addMessage(this.message, this.addressee.id);
     this.message = '';
   }
   close(): void {
