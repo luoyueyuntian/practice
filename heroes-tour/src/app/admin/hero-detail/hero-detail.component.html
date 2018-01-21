@@ -1,22 +1,25 @@
-<button class="back-btn" (click)="back()">Back</button>
-<h2>Hero Detail Info</h2>
-<ul class="edit-form-container">
-    <li class="edit-blocking">
-        <span>id:</span>{{hero.id}}
-    </li>
-    <li class="edit-blocking">
-        <span>name:</span>
-        <input type="text" [(ngModel)]="hero.name" />
-    </li>
-    <li class="edit-btn-container">
-        <button class="edit-btn" (click)="save()">Save</button>
-        <button class="edit-btn" (click)="reset()">Reset</button>
-    </li>
-</ul>
-<h3>Recieved Message:</h3>
-<ul class="message-list-container">
-    <li *ngIf="receiveMsg.length===0">none message!</li>
-    <li *ngFor="let msg of receiveMsg">
-        {{msg.message}}
-    </li>
-</ul>
+<div class="back-btn" (click)="back()">Back</div>
+<div class="hero-detail-container">
+    <h2>Hero Detail Info</h2>
+    <ul class="edit-form-container">
+        <li class="edit-blocking">
+            <span>id:</span>{{hero.id}}
+        </li>
+        <li class="edit-blocking">
+            <span>name:</span>
+            <input type="text" [(ngModel)]="hero.name" />
+        </li>
+        <li class="edit-btn-container">
+            <button class="edit-btn" (click)="save()">Save</button>
+            <button class="edit-btn" (click)="reset()">Reset</button>
+        </li>
+    </ul>
+    <h3>Recieved Message:</h3>
+    <ul class="message-list-container">
+        <li *ngIf="receiveMsg.length===0" class="empty-message">none message!</li>
+        <li *ngFor="let msg of receiveMsg">
+            <span class="msg-author">{{msg.auth}}</span>
+            <span class="msg-content">{{msg.message}}</span>
+        </li>
+    </ul>
+</div>

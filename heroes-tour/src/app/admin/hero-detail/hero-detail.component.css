@@ -1,5 +1,13 @@
+.hero-detail-container {
+    width: 500px;
+    display: inline-block;
+    vertical-align: top;
+}
+
 .back-btn {
-    padding: 5px 6px;
+    display: inline-block;
+    padding: 5px 8px;
+    margin-right: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #fff;
@@ -27,7 +35,7 @@
 }
 
 .edit-blocking input {
-    width: 200px;
+    width: 300px;
     height: 26px;
     line-height: 26px;
     padding-left: 5px;
@@ -43,8 +51,8 @@
 }
 
 .edit-btn-container {
-    padding-left: 50px;
-    padding-top: 12px;
+    margin-top: 12px;
+    text-align: center;
 }
 
 .edit-btn {
@@ -61,5 +69,51 @@
 }
 
 .message-list-container li {
+    margin: 5px 0;
+    height: 26px;
+    overflow: hidden;
     list-style: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.message-list-container li:after {
+    content: '.';
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+.message-list-container li.empty-message {
+    border: 0;
+    text-align: center;
+    color: red;
+}
+
+.message-list-container li .msg-author {
+    box-sizing: border-box;
+    float: left;
+    width: 80px;
+    height: 26px;
+    line-height: 26px;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-spacing: 0;
+}
+
+.message-list-container li .msg-content {
+    box-sizing: border-box;
+    float: left;
+    padding-left: 8px;
+    width: 403px;
+    height: 26px;
+    line-height: 26px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-spacing: 0;
 }
