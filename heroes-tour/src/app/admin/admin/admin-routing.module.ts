@@ -1,15 +1,15 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import {AdminComponent} from './admin.component';
-import {AuthGuardService} from '../../service/auth-guard.service';
-import {CrisisManageComponent} from '../crisis-manage/crisis-manage.component';
-import {HeroManageComponent} from '../hero-manage/hero-manage.component';
-import {DashboardComponent} from './../dashboard/dashboard.component';
+import { AdminComponent } from './admin.component';
+import { AuthGuardService } from '../../service/auth-guard.service';
+import { CrisisManageComponent } from '../crisis-manage/crisis-manage.component';
+import { HeroManageComponent } from '../hero-manage/hero-manage.component';
+import { DashboardComponent } from './../dashboard/dashboard.component';
 import { MessageCenterComponent } from './../message-center/message-center.component';
 import { HeroDetailComponent } from './../hero-detail/hero-detail.component';
 
-const appRoutes : Routes = [
+const appRoutes: Routes = [
     {
         path: 'admin',
         component: AdminComponent,
@@ -26,7 +26,7 @@ const appRoutes : Routes = [
                         path: 'heroes-manage',
                         component: HeroManageComponent
                     }, {
-                        path: 'hero-detail:id',
+                        path: 'hero-detail/:id',
                         component: HeroDetailComponent
                     }, {
                         path: 'message-center',
@@ -45,4 +45,4 @@ const appRoutes : Routes = [
     imports: [RouterModule.forRoot(appRoutes)],
     exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

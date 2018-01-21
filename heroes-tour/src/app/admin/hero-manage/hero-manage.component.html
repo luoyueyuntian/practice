@@ -10,4 +10,32 @@
             <div class="hero-content" (click)="viewDetail(hero)">{{hero.name}}</div>
         </li>
     </ul>
+    <div class="hero-detail-container" *ngIf="selectedHero">
+        <h3>
+            <span class="title">Hero Detail Info</span>
+        </h3>
+        <ul class=" edit-form-container ">
+            <li class="edit-blocking ">
+                <span>id:</span>{{selectedHero.id}}
+            </li>
+            <li class="edit-blocking ">
+                <span>name:</span>
+                <input type="text " [(ngModel)]="newHeroName" />
+            </li>
+            <li class="edit-btn-container ">
+                <button class="edit-btn " (click)="save() ">Save</button>
+                <button class="edit-btn " (click)="reset() ">Reset</button>
+            </li>
+        </ul>
+        <h3>
+            <span class="title">Recevied Message</span>
+        </h3>
+        <ul class="message-list-container ">
+            <li *ngIf="receiveMsg.length===0 " class="empty-message ">none message!</li>
+            <li *ngFor="let msg of receiveMsg">
+                <span class="msg-author ">{{msg.auth}}</span>
+                <span class="msg-content ">{{msg.message}}</span>
+            </li>
+        </ul>
+    </div>
 </div>

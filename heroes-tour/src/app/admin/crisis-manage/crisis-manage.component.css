@@ -1,6 +1,6 @@
 .crisis-list-container {
     margin-left: 15px;
-    width: 500px;
+    width: 400px;
 }
 
 .crisis-list-container li {
@@ -67,4 +67,5 @@
     text-align: center;
     background-color: #095872;
     color: #fff;
+    cursor: pointer;
 }

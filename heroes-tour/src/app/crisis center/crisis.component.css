@@ -11,7 +11,6 @@ ul.list li {
     border-radius: 6px;
     border: 1px solid #ddd;
     list-style: none;
-    cursor: pointer;
 }
 
 ul.list li span.badge {

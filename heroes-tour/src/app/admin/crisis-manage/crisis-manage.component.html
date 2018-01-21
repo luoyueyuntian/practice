@@ -7,7 +7,7 @@
         <li *ngFor="let crisis of crisisLibary|async">
             <div class="badge">{{crisis.id}}</div>
             <div class="del-btn" (click)="deleteCrisis(crisis)">Delete</div>
-            <div class="content" (click)="showDetail(crisis)">{{crisis.name}}</div>
+            <div class="content">{{crisis.name}}</div>
         </li>
     </ul>
 </div>

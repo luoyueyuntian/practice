@@ -27,6 +27,7 @@ export class ComposeComponent implements OnInit {
   }
   sendMessage(): void {
     this.msgService.addMessage(this.message, undefined, this.addressee.id);
+    this.message = '';
   }
   close(): void {
     this.router.navigate([{ outlets: { popup: null } }]);
