@@ -5,6 +5,9 @@ export default class HeroEditForm extends Component {
         super();
         this.save = this.save.bind(this);
     }
+    componentDidUpdate() {
+        this.newHeroNameInput.value = this.props.hero.name;
+    }
     save() {
         const { hero, updateHero, unSelectHero } = this.props;
         const newHeroName = this.newHeroNameInput.value;
@@ -21,7 +24,7 @@ export default class HeroEditForm extends Component {
 			    </li>
 			    <li className="edit-blocking">
 			        <span>name:</span>
-			        <input type="text" ref={(input)=>this.newHeroNameInput=input} defaultValue={name} />
+			        <input type="text" ref={(input)=>this.newHeroNameInput=input} defaultValue={name}/>
 			    </li>
 			    <li className="edit-btn-container">
 			        <button className="edit-btn" onClick={this.save}>Save</button>

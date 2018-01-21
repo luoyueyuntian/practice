@@ -9,6 +9,7 @@ export default class AddHeroItem extends Component {
         const { addHero, nextHeroId, updateNextHeroId } = this.props;
         addHero(this.newHeroInput.value, nextHeroId);
         updateNextHeroId();
+        this.newHeroInput.value = '';
     }
     render() {
         return (

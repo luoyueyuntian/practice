@@ -1,8 +1,9 @@
 import { ADD_CRISIS, DELETE_CRISIS, UPDATE_CRISIS, SELECT_CRISIS, UN_SELECT_CRISIS, UPDATE_NEXT_CRISIS_ID } from './actionTypes';
 
-export const addCrisis = (newHeroName) => {
+export const addCrisis = (newCrisisId, newHeroName) => {
     return {
         type: ADD_CRISIS,
+        id: newCrisisId,
         newHeroName: newHeroName
     }
 };

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 export default class Search extends Component {
     render() {
-        const { heroes, filterValue, filterHeroes } = this.props;
+        const { heroes, filterValue, filterHeroes, selectHero } = this.props;
         let SearchResultList = '';
         if (filterValue !== '') {
             const result = heroes.filter(hero => hero.name.indexOf(filterValue) !== -1);
             SearchResultList = (
                 <ul className="search-result-list">
-				    {result.map(hero => (<li key={hero.id}>{hero.name}</li>))}
+				    {result.map(hero => (<li key={hero.id} onClick={()=>selectHero(hero.id)}>{hero.name}</li>))}
 				</ul>
             );
         }

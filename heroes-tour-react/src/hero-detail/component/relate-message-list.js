@@ -5,7 +5,7 @@ export default class RelateMessageList extends Component {
         const { msgs } = this.props;
         let msgList = '';
         if (msgs.length === 0) {
-            msgList = (<li className="empty-message">none message!¡­¡­</li>);
+            msgList = (<li className="empty-message">none message!……</li>);
         } else {
             msgList = msgs.map((msg) => (
                 <li key={msg.id}>

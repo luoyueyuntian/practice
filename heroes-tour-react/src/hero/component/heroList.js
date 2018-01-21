@@ -19,7 +19,8 @@ export default class HeroList extends Component {
 		        	<Search 
                         heroes={heroes} 
                         filterValue={filterValue}
-                        filterHeroes={filterHeroes} 
+                        filterHeroes={filterHeroes}
+                        selectHero={selectHero}
                     />
 	        	</div>
         	</div>

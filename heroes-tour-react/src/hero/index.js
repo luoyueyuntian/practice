@@ -30,12 +30,17 @@ class Hero extends Component {
                     relateMsgs.push(msg);
                 }
             });
-            return (<HeroDetail
-                hero={selectHero}
-                msgs={relateMsgs}
-                unSelectHero={unSelectHero}
-                updateHero={updateHero}
-                />);
+            return (
+                <div>
+                    <div className="back-btn" onClick={unSelectHero}><i className="fa fa-arrow-left" aria-hidden="true"></i>Back</div>
+                    <HeroDetail
+                    hero={selectHero}
+                    msgs={relateMsgs}
+                    unSelectHero={unSelectHero}
+                    updateHero={updateHero}
+                    />
+                </div>
+            );
         } else {
             return (
                 <HeroList

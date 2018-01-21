@@ -15,9 +15,11 @@ class CrisisManage extends Component {
         return (
             <CrisisManageList
             crisisLibary={crisisLibary}
+            nextCrisisId={nextCrisisId}
             addCrisis={addCrisis}
             deleteCrisis={deleteCrisis}
             selectCrisis={selectCrisis}
+            updateNextCrisisId={updateNextCrisisId}
             />
         );
     }

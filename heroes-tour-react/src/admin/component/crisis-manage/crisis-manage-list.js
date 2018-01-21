@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import AddCrisisItem from './add-crisis';
 import CrisisManageItem from './crisi-manage-item';
 
 export default class CrisisManageList extends Component {
@@ -9,13 +10,17 @@ export default class CrisisManageList extends Component {
             <CrisisManageItem
             key={crisis.id}
             crisis={crisis}
-            addCrisis={addCrisis}
             deleteCrisis={deleteCrisis}
             selectCrisis={selectCrisis}
             />
         ));
         return (
             <ul className="hero-list-container">
+                <AddCrisisItem
+                nextCrisisId={nextCrisisId}
+                addCrisis={addCrisis}
+                updateNextCrisisId={updateNextCrisisId}
+                 />
                 {crisisItems}
             </ul>
         );

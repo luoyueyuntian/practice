@@ -8,7 +8,7 @@ export default class HeroManageItem extends Component {
             <li>
                 <div className="badge">{id}</div>
                 <div className="del-btn" onClick={() => deleteHero(id)}>Delete</div>
-                <div className="hero-content" onClick={selectHero} >{name}</div>
+                <div className="hero-content" onClick={()=>selectHero(id)} >{name}</div>
             </li>
         )
     }

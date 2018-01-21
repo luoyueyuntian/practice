@@ -1,9 +1,9 @@
 import { ADD_CRISIS, DELETE_CRISIS, UPDATE_CRISIS, SELECT_CRISIS, UN_SELECT_CRISIS, UPDATE_NEXT_CRISIS_ID } from './actionTypes';
 
-const addCrisis = (state, newHeroName) => {
+const addCrisis = (state, id, newHeroName) => {
     return state.concat({
         name: newHeroName,
-        id: 33
+        id: id
     });
 };
 
@@ -26,7 +26,7 @@ const updateCrisis = (state, crisisId, crisisNewName) => {
 export const editCrisisLibary = (state = [], action) => {
     switch (action.type) {
         case ADD_CRISIS:
-            return addCrisis(state, action.crisisNewName);
+            return addCrisis(state, action.id, action.newHeroName);
         case DELETE_CRISIS:
             return deleteCrisis(state, action.crisisId);
         case UPDATE_CRISIS:

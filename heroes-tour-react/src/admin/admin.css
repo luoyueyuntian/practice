@@ -27,8 +27,10 @@
 
 /*英雄管理*/
 .hero-list-container {
-    margin-left: 15px;
     width: 400px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: inline-block;
 }
 
 .hero-list-container li {

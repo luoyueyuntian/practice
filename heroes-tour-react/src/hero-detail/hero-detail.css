@@ -1,6 +1,7 @@
 .hero-detail-container{
     width: 500px;
     display: inline-block;
+    vertical-align: top;
 }
 
 .hero-detail-container h3{
@@ -120,13 +121,3 @@
     word-spacing: 0;
 }
 
-.back-btn {
-    display: inline-block;
-    padding: 5px 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #333;
-    cursor: pointer;
-    font-size: 16px;
-}

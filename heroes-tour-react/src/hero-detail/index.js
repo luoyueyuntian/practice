@@ -18,7 +18,6 @@ export default class HeroDetail extends Component {
 					<span className="title">Recevied Message</span>
 				</h3>
 				<RelateMessageList msgs={msgs} />
-		    	<div className="back-btn" onClick={unSelectHero}><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</div>
 		    </div>
         );
     }
