@@ -1,30 +1,40 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import { createStore, applyMiddleware, compose } from 'redux'
 import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux';
+import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 
 import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
-import allReducer from './rootReducer';
+import reducer from './redux/reducer';
 import defaultState from './defaultState';
+import { DevTools } from './containers';
 
 import Home from './home';
+import { initUnuesdCrisisId, initUnuesdHeroId, initUnuesdMessageId } from './service';
 
+//初始化未使用的id
+initUnuesdHeroId(defaultState.heroes);
+initUnuesdCrisisId(defaultState.crisisLibary);
+initUnuesdMessageId(defaultState.msgs);
 
 const history = createHistory();
 const middleware = routerMiddleware(history);
 
-const store = createStore(combineReducers({
-    ...allReducer,
-    router: routerReducer
-}), defaultState, applyMiddleware(middleware));
+const store = createStore(
+    reducer,
+    defaultState,
+    compose(
+        applyMiddleware(middleware, thunkMiddleware),
+        DevTools.instrument()
+    ));
 
 ReactDOM.render(
     <Provider store={store}>
-	 <ConnectedRouter history={history}>
+	 <ConnectedRouter history={history} >
 		 <Home />
 	  </ConnectedRouter>
 	</Provider>,

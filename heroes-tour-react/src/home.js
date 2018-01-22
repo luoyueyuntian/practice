@@ -4,13 +4,9 @@ import { Route } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Hero from './hero';
-import Crisis from './crisis';
-import Admin from './admin';
-import Login from './login';
-import Compose from './compose';
+import { Hero, Crisis, Admin, Login, Compose, DevTools } from './containers';
 
-import { showContactPanel } from './compose/action';
+import { showContactPanel } from './redux/action';
 
 class Home extends Component {
     render() {
@@ -28,16 +24,17 @@ class Home extends Component {
                 </nav>
               </div>
               <div className="main">
-                <Route path="/hero" component={Hero} />
-                <Route path="/crisis-center" component={Crisis} />
-                <Route path="/admin" component={Admin} />
-                <Route path="/login" component={Login} />
-                <Route path="/compose" component={Compose} />
-                <Route exact path="/" component={Login} />
+                  <Route path="/hero" component={Hero} />
+                  <Route path="/crisis-center" component={Crisis} />
+                  <Route path="/admin" component={Admin} />
+                  <Route path="/login" component={Login} />
+                  <Route path="/compose" component={Compose} />
+                  <Route exact path="/" component={Login} />
               </div>
               <div className="popup-container">
                 <Compose />
               </div>
+              <DevTools/>
           </div>
         );
     }
