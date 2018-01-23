@@ -4,7 +4,7 @@ import { Route } from 'react-router';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { Hero, Crisis, Admin, Login, Compose, DevTools } from './containers';
+import { Hero, Crisis, Admin, Login, Compose } from './containers';
 
 import { showContactPanel } from './redux/action';
 
@@ -34,7 +34,6 @@ class Home extends Component {
               <div className="popup-container">
                 <Compose />
               </div>
-              <DevTools/>
           </div>
         );
     }

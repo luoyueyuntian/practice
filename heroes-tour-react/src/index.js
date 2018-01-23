@@ -11,7 +11,6 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import reducer from './redux/reducer';
 import defaultState from './defaultState';
-import { DevTools } from './containers';
 
 import Home from './home';
 import { initUnuesdCrisisId, initUnuesdHeroId, initUnuesdMessageId } from './service';
@@ -28,8 +27,7 @@ const store = createStore(
     reducer,
     defaultState,
     compose(
-        applyMiddleware(middleware, thunkMiddleware),
-        DevTools.instrument()
+        applyMiddleware(middleware, thunkMiddleware)
     ));
 
 ReactDOM.render(

@@ -27,7 +27,7 @@ class Compose extends Component {
         if (showContact) {
             return (
                 <div className="message-container">
-                <span className="close-icon" onClick={hideContactPanel}>¡Á</span>
+                <span className="close-icon" onClick={hideContactPanel}><i class="fa fa-times" aria-hidden="true"></i></span>
                 <div className="form-section">
                     <span className="message-label">To:</span>
                     <AddressList heroes={heroes} uploadAdress={this.uploadAdress}/>
