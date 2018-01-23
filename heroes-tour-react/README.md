@@ -20,23 +20,25 @@ angular官方教程英雄管理工具虽然是一个很简单的项目，但却�
 ### 源码目录如下：
 <pre><code>src/
 ├── component/
-│   ├── common/
-│   │   ├── add-item.js
-│   │   ├── editable-item.js
-│   │   └── item.js
 │   ├── compose/
-│   │   ├── address-list.js
-│   │   └── message-form.js
+│   │   └── address-list.js
 │   ├── hero/
-│   │   ├── heroItem.js
-│   │   ├── heroList.js
+│   │   ├── search.css
 │   │   └── search.js
 │   ├── hero-detail/
 │   │   ├── hero-detail.css
 │   │   ├── hero-detail.js
 │   │   ├── hero-edit-form.js
 │   │   └── relate-message-list.js
+│   ├── item/
+│   │   ├── add-item.css
+│   │   ├── add-item.js
+│   │   ├── editable-item.css
+│   │   ├── editable-item.js
+│   │   ├── item.css
+│   │   └── item.js
 │   ├── login/
+│   │   ├── login-input.css
 │   │   └── login-input.js
 │   ├── message-center/
 │   │   └── message-item.js
@@ -44,25 +46,27 @@ angular官方教程英雄管理工具虽然是一个很简单的项目，但却�
 ├── containers/
 │   ├── admin/
 │   │   ├── admin.css
-│   │   └── index.js
+│   │   └── admin.js
 │   ├── compose/
 │   │   ├── compose.css
-│   │   └── index.js
+│   │   └── compose.js
 │   ├── crisis/
-│   │   └── index.js
+│   │   └── crisis.js
 │   ├── crisis-manage/
 │   │   └── crisis-manage.js
 │   ├── dashboard/
+│   │   ├── dashboard.css
 │   │   └── dashboard.js
 │   ├── hero/
 │   │   ├── hero.css
-│   │   └── index.js
+│   │   └── hero.js
 │   ├── hero-manage/
 │   │   └── hero-manage.js
 │   ├── login/
-│   │   ├── index.js
-│   │   └── login.css
+│   │   ├── login.css
+│   │   └── login.js
 │   ├── message-center/
+│   │   ├── message-center.css
 │   │   └── message-center.js
 │   └── index.js
 ├── redux/
@@ -82,10 +86,8 @@ angular官方教程英雄管理工具虽然是一个很简单的项目，但却�
 │   ├── heroService.js
 │   ├── index.js
 │   └── messageService.js
-├── util/
 ├── defaultState.js
 ├── directoryParser.js
-├── folderTree.md
 ├── home.js
 ├── index.css
 ├── index.js
