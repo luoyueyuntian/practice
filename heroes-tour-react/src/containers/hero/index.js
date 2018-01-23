@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { updateHero, selectHero, unselectHero } from '../../redux/action';
 import './hero.css';
 
-import { HeroList, HeroDetail } from '../../component';
+import { Item, HeroSearch, HeroDetail } from '../../component';
 
 class Hero extends Component {
     componentWillUnmount() {
@@ -45,12 +45,25 @@ class Hero extends Component {
             );
         } else {
             return (
-                <HeroList
-                heroes={heroes}
-                selectHero={selectHero}
-                filterValue={filterValue}
-                filterHeroes={filterHeroes}
-                />
+                <div>
+                <ul className="list">
+                    {heroes.map(hero => <Item
+                    key={hero.id}
+                    id={hero.id}
+                    name={hero.name}
+                    clickHander={selectHero}
+                    />
+                )}
+                </ul>
+                <div className="search-panel">
+                    <HeroSearch
+                    heroes={heroes}
+                    filterValue={filterValue}
+                    filterHeroes={filterHeroes}
+                    selectHero={selectHero}
+                    />
+                </div>
+            </div>
             );
         }
     }
@@ -63,5 +76,9 @@ const mapStateToProps = (state, ownProps) => {
         msgs: state.msgs
     }
 };
-const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({ updateHero, selectHero, unselectHero }, dispatch);
+const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({
+    updateHero,
+    selectHero,
+    unselectHero
+}, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(Hero);

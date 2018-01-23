@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { CrisisManageList } from '../../component';
+import { AddItem, EditableItem } from '../../component';
 
 import { addCrisis, deleteCrisis, selectCrisis, unselectHero } from '../../redux/action';
 
@@ -11,22 +11,27 @@ class CrisisManage extends Component {
         this.props.unSelectCrisis();
     }
     render() {
-        const { crisisLibary, nextCrisisId, addCrisis, deleteCrisis, selectCrisis } = this.props;
-        return (
-            <CrisisManageList
-            crisisLibary={crisisLibary}
-            nextCrisisId={nextCrisisId}
-            addCrisis={addCrisis}
-            deleteCrisis={deleteCrisis}
-            selectCrisis={selectCrisis}
+        const { crisisLibary, addCrisis, deleteCrisis, selectCrisis } = this.props;
+        const crisisItems = crisisLibary.map(crisis => (
+            <EditableItem
+            key={crisis.id}
+            name={crisis.name}
+            id={crisis.id}
+            deleteHander={deleteCrisis}
+            selectHander={selectCrisis}
             />
+        ));
+        return (
+            <ul className="hero-list-container">
+                <AddItem addBtnCallback={addCrisis} />
+                {crisisItems}
+            </ul>
         );
     }
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    crisisLibary: state.crisisLibary,
-    nextCrisisId: state.nextCrisisId
+    crisisLibary: state.crisisLibary
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { addHero, deleteHero, updateHero, selectHero, unselectHero } from '../../redux/action';
-import { HeroManageList, HeroDetail } from '../../component';
+import { EditableItem, AddItem, HeroDetail } from '../../component';
 
 class HeroManage extends Component {
     componentWillUnmount() {
-        this.props.unSelectHero();
+        this.props.unselectHero();
     }
     render() {
-        const { heroes, msgs, curHeroId, updateHero, addHero, deleteHero, selectHero, unSelectHero } = this.props;
+        const { heroes, msgs, curHeroId, updateHero, addHero, deleteHero, selectHero, unselectHero } = this.props;
         let heroDetail = '';
         if (curHeroId !== -1) {
             const MATCH_ALL = 0;
@@ -36,18 +36,25 @@ class HeroManage extends Component {
             hero={curHero}
             msgs={relateMessages}
             updateHero={updateHero}
-            unSelectHero={unSelectHero}
+            unselectHero={unselectHero}
             />;
         }
+        const heroItems = heroes.map(hero => (
+            <EditableItem
+            key={hero.id}
+            id={hero.id}
+            name={hero.name}
+            addHero={addHero}
+            deleteHander={deleteHero}
+            selectHander={selectHero}
+            />
+        ));
         return (
             <div>
-                <HeroManageList
-                heroes={heroes}
-                addHero={addHero}
-                deleteHero={deleteHero}
-                selectHero={selectHero}
-                unSelectHero={unSelectHero}
-                />
+                <ul className="hero-list-container">
+                    <AddItem addBtnCallback={addHero}/>
+                    {heroItems}
+                </ul>
                 {heroDetail}
             </div>
         );
@@ -65,7 +72,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
     deleteHero: bindActionCreators(deleteHero, dispatch),
     updateHero: bindActionCreators(updateHero, dispatch),
     selectHero: bindActionCreators(selectHero, dispatch),
-    unSelectHero: bindActionCreators(unselectHero, dispatch)
+    unselectHero: bindActionCreators(unselectHero, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HeroManage);

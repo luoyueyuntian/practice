@@ -22,5 +22,5 @@ export const selectedCrisisIdReducer = (state = -1, action) => {
             return -1;
         default:
             return state;
-    };
+    }
 };

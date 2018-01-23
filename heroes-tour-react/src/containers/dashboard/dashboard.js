@@ -80,10 +80,12 @@ class Dashboard extends Component {
         });
     }
     render() {
-        return (<div>
-	        	<p>Dashboard</p>
-				<div id="chartContainer"></div>
-        	</div>);
+        return (
+            <div>
+                <p>Dashboard</p>
+                <div id="chartContainer"></div>
+            </div>
+        );
     }
 }
 const mapStateToProps = (state, ownProps) => ({

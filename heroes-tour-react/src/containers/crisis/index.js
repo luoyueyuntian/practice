@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { CrisisList } from '../../component';
+import { Item } from '../../component';
 
 class Crisis extends Component {
     render() {
         const { crisisLibary } = this.props;
         return (
-            <CrisisList crisisLibary={crisisLibary}/>
+            <ul className="list">
+				{crisisLibary.map(crisis => <Item key={crisis.id} id={crisis.id} name={crisis.name}/>)}
+			</ul>
         );
     }
 }
