@@ -1,10 +1,10 @@
-import Admin from './admin/index';
-import Crisis from './crisis/index';
+import Admin from './admin/admin';
+import Crisis from './crisis/crisis';
 import CrisisManage from './crisis-manage/crisis-manage';
-import Hero from './hero/index';
+import Hero from './hero/hero';
 import HeroManage from './hero-manage/hero-manage';
-import Login from './login/index';
+import Login from './login/login';
 import MessageCenter from './message-center/message-center';
 import Dashboard from './dashboard/dashboard';
-import Compose from './compose/index';
+import Compose from './compose/compose';
 export { Admin, Crisis, CrisisManage, Hero, HeroManage, Login, MessageCenter, Dashboard, Compose };
