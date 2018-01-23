@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateHero, selectHero, unselectHero, asyncAction } from '../../redux/action';
+import { updateHero, selectHero, unselectHero } from '../../redux/action';
 import './hero.css';
 
 import { HeroList, HeroDetail } from '../../component';
 
 class Hero extends Component {
-    constructor() {
-        super();
-        this.asyncAction = this.asyncAction.bind(this);
-    }
-    asyncAction() {
-        console.log('dispatch');
-        this.props.asyncAction();
-    }
     componentWillUnmount() {
         this.props.unselectHero();
     }
@@ -49,7 +41,6 @@ class Hero extends Component {
                     unselectHero={unselectHero}
                     updateHero={updateHero}
                     />
-                    <div className="back-btn" onClick={this.asyncAction}>TestAsync</div>
                 </div>
             );
         } else {
@@ -72,5 +63,5 @@ const mapStateToProps = (state, ownProps) => {
         msgs: state.msgs
     }
 };
-const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({ updateHero, selectHero, unselectHero, asyncAction }, dispatch);
+const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({ updateHero, selectHero, unselectHero }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(Hero);

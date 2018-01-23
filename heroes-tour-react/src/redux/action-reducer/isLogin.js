@@ -20,7 +20,9 @@ export const login = () => {
         loginPromise.then(success => {
             dispatch(_login())
             dispatch(hideLogIn());
-        })
+        }, failed => {
+            dispatch(hideLogIn());
+        });
     };
 };
 
