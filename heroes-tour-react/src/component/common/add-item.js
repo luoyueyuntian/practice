@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
+import './add-item.css';
+
 class AddItem extends Component {
     static propTypes = {
         addBtnCallback: PropTypes.func.isRequired
@@ -15,7 +17,7 @@ class AddItem extends Component {
     }
     render() {
         return (
-            <li className="add-hero-container">
+            <li className="editable-item-container">
                 <span className="add-btn" onClick={this.add}>Add</span>
                 <input type="text" ref={(input) => this.propNameInput = input} />
             </li>

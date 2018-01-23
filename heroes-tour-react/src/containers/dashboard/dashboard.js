@@ -6,6 +6,8 @@ import 'echarts/src/component/legend';
 import 'echarts/src/component/tooltip';
 import 'echarts/src/component/title';
 
+import './dashboard.css';
+
 class Dashboard extends Component {
     componentDidMount() {
         this._initChart();

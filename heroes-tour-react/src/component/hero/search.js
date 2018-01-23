@@ -1,11 +1,31 @@
 import React, { Component } from 'react';
 
+import './search.css';
+
 export default class Search extends Component {
+    constructor() {
+        super();
+        this.state = {
+            term: ''
+        }
+    }
+    _filterHeroes(heroes, term) {
+        if (term === '') {
+            return [];
+        }
+        return heroes.filter(hero => hero.name.indexOf(term) !== -1)
+    }
+    reFilter(term) {
+        this.setState({
+            term: term
+        });
+    }
     render() {
-        const { heroes, filterValue, filterHeroes, selectHero } = this.props;
+        const { heroes, selectHero } = this.props;
         let SearchResultList = '';
-        if (filterValue !== '') {
-            const result = heroes.filter(hero => hero.name.indexOf(filterValue) !== -1);
+        const term = this.state.term;
+        if (term !== '') {
+            const result = this._filterHeroes(heroes, term);
             SearchResultList = (
                 <ul className="search-result-list">
 				    {result.map(hero => (<li key={hero.id} onClick={()=>selectHero(hero.id)}>{hero.name}</li>))}
@@ -19,7 +39,7 @@ export default class Search extends Component {
 				        <i className="fa fa-search" aria-hidden="true"></i>
 				    </div>
 				    <div className="input-container">
-				        <input type="text" className="search-input" defaultValue={filterValue} onKeyUp={(e) => filterHeroes(e.target.value)} />
+				        <input type="text" className="search-input" defaultValue={term} onKeyUp={(e) => this.reFilter(e.target.value)} />
 				    </div>
 				</div>
 				<div>

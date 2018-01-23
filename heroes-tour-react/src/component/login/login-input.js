@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './login-input.css';
+
 export default class LoginInput extends Component {
     render() {
         return (

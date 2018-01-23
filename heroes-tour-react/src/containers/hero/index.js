@@ -11,7 +11,7 @@ class Hero extends Component {
         this.props.unselectHero();
     }
     render() {
-        const { heroes, curHeroId, msgs, updateHero, selectHero, unselectHero, filterValue, filterHeroes } = this.props;
+        const { heroes, curHeroId, msgs, updateHero, selectHero, unselectHero } = this.props;
         if (curHeroId !== -1) {
             const MATCH_ALL = 0;
             let selectHero = {
@@ -46,7 +46,7 @@ class Hero extends Component {
         } else {
             return (
                 <div>
-                <ul className="list">
+                <ul className="default-list-container">
                     {heroes.map(hero => <Item
                     key={hero.id}
                     id={hero.id}
@@ -58,8 +58,6 @@ class Hero extends Component {
                 <div className="search-panel">
                     <HeroSearch
                     heroes={heroes}
-                    filterValue={filterValue}
-                    filterHeroes={filterHeroes}
                     selectHero={selectHero}
                     />
                 </div>

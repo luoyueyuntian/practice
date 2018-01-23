@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { MessageItem } from '../../component';
+import './message-center.css';
 
 
 class MessageCenter extends Component {

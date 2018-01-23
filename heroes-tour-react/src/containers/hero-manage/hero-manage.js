@@ -51,7 +51,7 @@ class HeroManage extends Component {
         ));
         return (
             <div>
-                <ul className="hero-list-container">
+                <ul className="manage-panel-container">
                     <AddItem addBtnCallback={addHero}/>
                     {heroItems}
                 </ul>

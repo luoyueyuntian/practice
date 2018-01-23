@@ -6,7 +6,7 @@ class Crisis extends Component {
     render() {
         const { crisisLibary } = this.props;
         return (
-            <ul className="list">
+            <ul className="default-list-container">
 				{crisisLibary.map(crisis => <Item key={crisis.id} id={crisis.id} name={crisis.name}/>)}
 			</ul>
         );

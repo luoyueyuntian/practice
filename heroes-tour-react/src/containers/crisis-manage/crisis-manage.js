@@ -22,7 +22,7 @@ class CrisisManage extends Component {
             />
         ));
         return (
-            <ul className="hero-list-container">
+            <ul className="manage-panel-container">
                 <AddItem addBtnCallback={addCrisis} />
                 {crisisItems}
             </ul>

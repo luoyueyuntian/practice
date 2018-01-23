@@ -52,3 +52,7 @@
 .nav-container a.active{
   border-bottom: 3px solid #0099ff;
 }
+
+.default-list-container{
+  width: 400px;
+}

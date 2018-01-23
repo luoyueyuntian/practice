@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
 
+import './editable-item.css'
+
 class EditableItem extends Component {
     static propTypes = {
         itemAttr: PropTypes.shape({
@@ -13,10 +15,10 @@ class EditableItem extends Component {
     render() {
         const { id, name, selectHander, deleteHander } = this.props;
         return (
-            <li>
+            <li className="editable-item-container">
                 <div className="badge">{id}</div>
                 <div className="del-btn" onClick={() => deleteHander(id)}>Delete</div>
-                <div className="hero-content" onClick={() => selectHander(id)}>{name}</div>
+                <div className="content" onClick={() => selectHander(id)}>{name}</div>
             </li>
         )
 
