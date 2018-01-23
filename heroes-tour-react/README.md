@@ -87,7 +87,6 @@ angular官方教程英雄管理工具虽然是一个很简单的项目，但却�
 │   ├── index.js
 │   └── messageService.js
 ├── defaultState.js
-├── directoryParser.js
 ├── home.js
 ├── index.css
 ├── index.js
