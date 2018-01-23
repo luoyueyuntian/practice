@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { MessageForm } from '../../component';
-import { addMessage } from '../../redux/action';
+import { addMessage, hideContactPanel } from '../../redux/action';
 
 import './compose.css';
 
 class Compose extends Component {
     render() {
-        const { heroes, showContact, nextMsgId, isLogin, hideContactPanel, addMessage, updateNextMessageId } = this.props;
+        const { heroes, showContact, nextMsgId, isLogin, hideContactPanel, addMessage } = this.props;
         if (showContact) {
             return (
                 <MessageForm 
@@ -17,7 +17,6 @@ class Compose extends Component {
                 isLogin={isLogin}
                 hideContactPanel={hideContactPanel}
                 sendMessage={addMessage}
-                updateNextMessageId={updateNextMessageId}
                 />
             );
         } else {
@@ -33,5 +32,5 @@ const mapStateToProps = (state, ownProps) => ({
     isLogin: state.isLogin
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({ addMessage }, dispatch);
+const mapDispatchToProps = (dispatch, ownProps) => bindActionCreators({ addMessage, hideContactPanel }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(Compose);
