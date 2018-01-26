@@ -1,14 +1,15 @@
 <template>
 <div>
     <ul class="default-list-container">
-        <EditableItem
-        v-for="hero in heroes"
-        :key="hero.id"
-        :id="hero.id"
-        :name="hero.name"
-        :delBtnCallback="deleteHero"
-        :checkCallback="selectHero"
-        />
+      <AddItem :addBtnCallback="addHero"/>
+      <EditableItem
+      v-for="hero in heroes"
+      :key="hero.id"
+      :id="hero.id"
+      :name="hero.name"
+      :delBtnCallback="deleteHero"
+      :checkCallback="selectHero"
+      />
     </ul>
     <div class="search-panel">
 
@@ -18,7 +19,7 @@
 
 <script>
 import { mapMutations } from 'vuex'
-import {EditableItem} from '../../../components'
+import {AddItem, EditableItem} from '../../../components'
 import {ADD_HERO, DELETE_HERO, MODIFY_HERO} from '../../../vuex/constant'
 export default {
   data: function () {
@@ -32,6 +33,7 @@ export default {
     }
   },
   components: {
+    AddItem,
     EditableItem
   },
   methods: {

@@ -1,8 +1,8 @@
 const _initHeroesUnuseId = (data) => {
   let unusedId = -1
-  data.forEach(hero => {
-    if (hero.id > unusedId) {
-      unusedId = hero.id
+  data.forEach(item => {
+    if (item.id > unusedId) {
+      unusedId = item.id
     }
   })
   return unusedId
@@ -18,13 +18,13 @@ export const initService = (heroes, crisisLibary, messages) => {
   unusedMessageId = _initHeroesUnuseId(messages)
 }
 export const getUnusedHeroId = () => {
-  return unusedHeroId++
+  return ++unusedHeroId
 }
 
 export const getUnusedCrisisId = () => {
-  return unusedCrisisId++
+  return ++unusedCrisisId
 }
 
 export const getUnusedMessageId = () => {
-  return unusedMessageId++
+  return ++unusedMessageId
 }

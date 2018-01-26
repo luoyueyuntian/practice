@@ -1,6 +1,6 @@
 <template>
-<li className="editable-item-container">
-    <span className="add-btn" @click="addItemHander">Add</span>
+<li class="editable-item-container">
+    <span class="add-btn" @click="addItemHander">Add</span>
     <input type="text" v-model="newItemName"/>
 </li>
 </template>
@@ -15,9 +15,9 @@ export default {
   props: {
     addBtnCallback: Function
   },
-  method: {
-    addItemHander: () => {
-      this.addBtnCallback(this.newItemName)
+  methods: {
+    addItemHander: function () {
+      this.addBtnCallback({name: this.newItemName})
     }
   }
 }

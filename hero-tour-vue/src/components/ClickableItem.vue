@@ -10,7 +10,7 @@ export default {
     selectHander: Function
   },
   method: {
-    clickHander: () => {
+    clickHander: function () {
       this.selectHander(this.id)
     }
   }
