@@ -5,7 +5,7 @@
         <span class="message-label">To:</span>
         <select class="hero-list" v-model="addressee">
             <option value="0">All</option>
-            <option v-for="hero in heroes" :key="hero.id" :value="hero">
+            <option v-for="hero in heroes" :key="hero.id" :value="hero.id">
                 {{hero.name}}
             </option>
       </select>

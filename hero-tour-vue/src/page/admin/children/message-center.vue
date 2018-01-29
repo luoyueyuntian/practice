@@ -12,7 +12,7 @@
         <tbody>
             <tr v-for="message in msgs" :key="message.id">
                 <td>{{message.id}}</td>
-                <td>{{message.autd}}</td>
+                <td>{{message.auth}}</td>
                 <td>{{message.addressee}}</td>
                 <td>{{message.message}}</td>
             </tr>
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style>
-/*消息中心*/
+/*娑堟伅涓績*/
 .msg-table{
     width: 500px;
     margin-top: 15px;
