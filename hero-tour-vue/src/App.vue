@@ -48,7 +48,7 @@ export default {
 }
 
 .main-nav-container {
-    border-bottom: 2px solid #eee;
+  margin-bottom: 8px;
 }
 
 .main-nav-container nav a {
@@ -78,7 +78,7 @@ export default {
 
 .nav-container{
   padding-left: 15px;
-  border-bottom: 2px solid #eee;
+  border-bottom: 1px solid #aaa;
 }
 .nav-container a{
   display: inline-block;

@@ -12,7 +12,21 @@
 
 <script>
 export default {
-
+  computed: {
+    isLogin: function () {
+      return this.$store.state.loginStatus
+    }
+  },
+  beforeRouteEnter: function (to, from, next) {
+    next(vm => {
+      if (!vm.isLogin) {
+        vm.$router.push({
+          path: '/login',
+          query: { redirect: to.fullPath }
+        })
+      }
+    })
+  }
 }
 </script>
 

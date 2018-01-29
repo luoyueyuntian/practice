@@ -12,7 +12,7 @@
     </ul>
     <div class="log_in_tip" v-if="showLogIn&&!loginStatus">Trying to log in ...</div>
     <div>
-        <button class="login-btn" :disabled="loginStatus" @click="dispatchLogin">Login</button>
+        <button class="login-btn" :disabled="loginStatus" @click="login">Login</button>
         <button class="login-btn" :disabled="!loginStatus" @click="logoutAction">Logout</button>
     </div>
 </div>
@@ -35,12 +35,15 @@ export default {
     showLogInTip: function () {
       return !this.loginStatus && this.showLogIn
     },
-    dispatchLogin: function () {
+    login: function () {
       this.showLogIn = true
       this.loginAction().then(
         res => {
           this.showLogIn = false
-          console.log(this.$store)
+          let redirt = this.$route.query.redirect
+          if (redirt !== undefined) {
+            this.$router.push(redirt)
+          }
         },
         () => {
           this.showLogIn = false
