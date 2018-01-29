@@ -41,6 +41,7 @@
     color: #fff;
     background-color: #095872;
     text-align: center;
+    cursor: pointer;
 }
 
 .crisis-list-container li div.badge {
