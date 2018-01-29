@@ -95,5 +95,6 @@ export default {
 
 .default-list-container{
   width: 400px;
+  display: inline-block;
 }
 </style>

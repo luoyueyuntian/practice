@@ -5,7 +5,7 @@
           :key="hero.id"
           :id="hero.id"
           :name="hero.name"
-          :selectHander="viewHeroDetail"
+          @selectItem="viewHeroDetail"
           />
       </ul>
   </div>

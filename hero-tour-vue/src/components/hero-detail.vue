@@ -9,7 +9,7 @@
         </li>
         <li class="edit-blocking ">
             <span>name:</span>
-            <input type="text " v-model="newName" />
+            <input type="text" v-model="newName" />
         </li>
         <li class="edit-btn-container ">
             <button class="edit-btn " @click="saveModify() ">Save</button>
@@ -49,11 +49,14 @@ export default {
         newName: this.newName,
         id: this.id
       })
+      this.back()
     },
     cancel: function () {
-      this.newName = this.name
       this.back()
     }
+  },
+  updated: function () {
+    this.newName = this.name
   }
 }
 </script>

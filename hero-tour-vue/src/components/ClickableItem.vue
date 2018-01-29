@@ -6,12 +6,11 @@
 export default {
   props: {
     id: Number,
-    name: String,
-    selectHander: Function
+    name: String
   },
   methods: {
-    clickHander: function () {
-      this.selectHander(this.id)
+    clickHander: function (id) {
+      this.$emit('selectItem', id)
     }
   }
 }

@@ -11,12 +11,11 @@ export default {
   props: {
     id: Number,
     name: String,
-    delBtnCallback: Function,
-    checkCallback: Function
+    delBtnCallback: Function
   },
   methods: {
     checkItem: function () {
-      this.checkCallback(this.id)
+      this.$emit('selectItem', this.id)
     },
     deleteItem: function () {
       this.delBtnCallback({id: this.id})
