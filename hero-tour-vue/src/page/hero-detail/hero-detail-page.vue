@@ -16,28 +16,27 @@ import { mapMutations } from 'vuex'
 import {HeroDetail} from '../../components'
 import { MODIFY_HERO } from '../../vuex/constant'
 export default {
+  data: function () {
+    let id = parseInt(this.$route.params.id, 10)
+    let destHeroName = ''
+    this.$store.state.heroes.forEach(hero => {
+      if (hero.id === id) {
+        destHeroName = hero.name
+      }
+    })
+    return {
+      name: destHeroName,
+      id: id
+    }
+  },
   computed: {
-    id: function () {
-      return parseInt(this.$route.params.id, 10)
-    },
-    name: function () {
-      let destHeroName = ''
-      const heroId = parseInt(this.$route.params.id)
-      this.$store.state.heroes.forEach(hero => {
-        if (hero.id === heroId) {
-          destHeroName = hero.name
-        }
-      })
-      return destHeroName
-    },
     receiveMsg: function () {
       const destMsg = []
-      const heroId = parseInt(this.$route.params.id)
       this.$store.state.msgs.forEach(message => {
-        if (message.addressee === '0') {
+        if (message.addressee === 0) {
           destMsg.push(message)
         }
-        if (message.addressee === heroId) {
+        if (message.addressee === this.id) {
           destMsg.push(message)
         }
       })

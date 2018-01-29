@@ -33,7 +33,8 @@ const state = {
     id: 4,
     name: 'Procrastinators Meeting Delayed Again'
   }],
-  msgs: []
+  msgs: [],
+  contactPanel: false
 }
 
 export default new Vuex.Store({

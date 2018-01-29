@@ -14,3 +14,7 @@ export const MODIFY_CRISIS = 'MODIFY_CRISIS'
 
 // 收发信息
 export const SEND_MESSAGE = 'SEND_MESSAGE'
+
+// 显示隐藏联系面板
+export const SHOW_CONTACT_PANEL = 'SHOW_CONTACT_PANEL'
+export const HIDE_CONTACT_PANEL = 'HIDE_CONTACT_PANEL'
