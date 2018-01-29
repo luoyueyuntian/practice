@@ -12,7 +12,7 @@ class Dashboard extends Component {
     componentDidMount() {
         this._initChart();
     }
-    componentWillReceiveProps() {
+    componentDidUpdate() {
         this._updateChart();
     }
     componentWillUnmount() {
