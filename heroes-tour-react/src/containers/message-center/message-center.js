@@ -20,11 +20,6 @@ class MessageCenter extends Component {
     }
     render() {
         const { msgs } = this.props;
-        if (msgs.length === 0) {
-            return (
-                <div>no message</div>
-            );
-        }
         const messageList = msgs.map(message => {
             let msgInfo = {};
             msgInfo.key = message.id;
@@ -35,19 +30,22 @@ class MessageCenter extends Component {
             return <MessageItem {...msgInfo} />;
         })
         return (
-            <table className="msg-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>FROM</th>
-                        <th>TO</th>
-                        <th>MESSAGE</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {messageList}
-                </tbody>
-            </table>
+            <div>
+                <table className="msg-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>FROM</th>
+                            <th>TO</th>
+                            <th>MESSAGE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {messageList}
+                    </tbody>
+                </table> 
+                {msgs.length === 0 ? (<div>no message</div>) : '' }
+            </div>
         );
     }
 }
