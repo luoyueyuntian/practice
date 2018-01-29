@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { PageNotFound, Login, Hero, Crisis, Admin, Dashboard, HeroManage, CrisisManage, HeroDetailPage } from '../page'
+import { PageNotFound, Login, Hero, Crisis, Admin, Dashboard, HeroManage, CrisisManage, HeroDetailPage, MessageCenter } from '../page'
 
 Vue.use(Router)
 
@@ -32,6 +32,9 @@ export default new Router({
     }, {
       path: 'crisis-manage',
       component: CrisisManage
+    }, {
+      path: 'message-center',
+      component: MessageCenter
     }]
   }, {
     path: '/login',

@@ -8,4 +8,5 @@ import HeroManage from './admin/children/hero-manage'
 import CrisisManage from './admin/children/crisis-manage'
 import HeroDetailPage from './hero-detail/hero-detail-page'
 import Compose from './compose/compose'
-export { PageNotFound, Login, Hero, Crisis, Admin, Dashboard, HeroManage, CrisisManage, HeroDetailPage, Compose }
+import MessageCenter from './admin/children/message-center'
+export { PageNotFound, Login, Hero, Crisis, Admin, Dashboard, HeroManage, CrisisManage, HeroDetailPage, Compose, MessageCenter }
