@@ -1,7 +1,9 @@
-import { LOGIN, LOGOUT, ADD_HERO, DELETE_HERO, MODIFY_HERO, ADD_CRISIS, DELETE_CRISIS, MODIFY_CRISIS } from './constant'
+import { LOGIN, LOGOUT, ADD_HERO, DELETE_HERO, MODIFY_HERO, ADD_CRISIS, DELETE_CRISIS, MODIFY_CRISIS, SEND_MESSAGE } from './constant'
 import { login, logout } from './mutation/login'
 import { addHero, deleteHero, modifyHero } from './mutation/heroes'
 import { addCrisis, deleteCrisis, modifyCrisis } from './mutation/crisisLibary'
+import { sendMessage } from './mutation/message'
+
 export default {
   [LOGIN]: login,
   [LOGOUT]: logout,
@@ -10,5 +12,6 @@ export default {
   [MODIFY_HERO]: modifyHero,
   [ADD_CRISIS]: addCrisis,
   [DELETE_CRISIS]: deleteCrisis,
-  [MODIFY_CRISIS]: modifyCrisis
+  [MODIFY_CRISIS]: modifyCrisis,
+  [SEND_MESSAGE]: sendMessage
 }

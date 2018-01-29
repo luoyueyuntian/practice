@@ -6,4 +6,5 @@ import Admin from './admin/admin'
 import Dashboard from './admin/children/dashboard'
 import HeroManage from './admin/children/hero-manage'
 import CrisisManage from './admin/children/crisis-manage'
-export { PageNotFound, Login, Hero, Crisis, Admin, Dashboard, HeroManage, CrisisManage }
+import HeroDetailPage from './hero-detail/hero-detail-page'
+export { PageNotFound, Login, Hero, Crisis, Admin, Dashboard, HeroManage, CrisisManage, HeroDetailPage }

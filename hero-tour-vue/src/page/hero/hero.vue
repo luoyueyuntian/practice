@@ -1,7 +1,12 @@
 <template>
   <div>
       <ul class="default-list-container">
-          <ClickableItem v-for="hero in heroes" :key="hero.id" :id="hero.id" :name="hero.name" />
+          <ClickableItem v-for="hero in heroes"
+          :key="hero.id"
+          :id="hero.id"
+          :name="hero.name"
+          :selectHander="viewHeroDetail"
+          />
       </ul>
   </div>
 </template>
@@ -12,6 +17,11 @@ export default {
   computed: {
     heroes: function () {
       return this.$store.state.heroes
+    }
+  },
+  methods: {
+    viewHeroDetail: function (id) {
+      this.$router.push('/hero-detail/' + id)
     }
   },
   components: {

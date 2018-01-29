@@ -9,7 +9,7 @@ export default {
     name: String,
     selectHander: Function
   },
-  method: {
+  methods: {
     clickHander: function () {
       this.selectHander(this.id)
     }
