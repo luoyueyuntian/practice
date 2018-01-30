@@ -7,3 +7,6 @@
 /hero-tour/node_modules
 /hero-tour-vue/node_modules
 /hero-tour-react/node_modules
+/heroes-tour-angular/src/folderTree.md
+/heroes-tour-angular/src/directoryParser.bat
+/heroes-tour-angular/src/directoryParser.js
