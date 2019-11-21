@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { init, dispose } from 'echarts/src/echarts';
+import { init, dispose } from 'echarts';
 import 'echarts/src/chart/pie';
 import 'echarts/src/component/legend';
 import 'echarts/src/component/tooltip';

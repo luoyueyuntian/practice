@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { Observable, of } from 'rxjs';
 
 import Hero from '../model/hero';
 import { HEROES } from '../mock/heroes-mock';
@@ -32,7 +31,7 @@ export class HeroService {
     return pos;
   }
   getHeroes(): Observable<Hero[]> {
-    return Observable.of(HEROES);
+    return of(HEROES);
   }
   getHeroById(id: number): Hero {
     let destHero: Hero;
@@ -51,23 +50,23 @@ export class HeroService {
         id: this.unusedId++
       });
     }
-    return Observable.of(HEROES);
+    return of(HEROES);
   }
   deleteHero(hero: Hero): Observable<Hero[]> {
     const index = this.findHeroById(hero.id);
     HEROES.splice(index, 1);
-    return Observable.of(HEROES);
+    return of(HEROES);
   }
   search(nameFragment: string): Observable<Hero[]> {
     const result: Hero[] = [];
     if (nameFragment === '') {
-      return Observable.of(result);
+      return of(result);
     }
     HEROES.map(hero => {
       if (hero.name.indexOf(nameFragment) !== -1) {
         result.push(hero);
       }
     });
-    return Observable.of(result);
+    return of(result);
   }
 }

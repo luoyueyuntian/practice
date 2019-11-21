@@ -1,8 +1,6 @@
 import { Component, Input, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/switchMap';
 
 import Hero from '../../model/hero';
 import { HeroService } from './../../service/hero.service';

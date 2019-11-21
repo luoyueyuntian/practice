@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
+import { Observable, of } from 'rxjs';
 
 import Crisis from '../model/crisis';
 import { CRISES } from '../mock/crisis-mock';
@@ -35,7 +34,7 @@ export class CrisisService {
     return pos;
   }
   getCrisisLibary(): Observable<Crisis[]> {
-    return Observable.of(CRISES);
+    return of(CRISES);
   }
   getCrisisById(id: number): Crisis {
     let destCrisis: Crisis;
@@ -54,11 +53,11 @@ export class CrisisService {
         id: this.unusedId++
       });
     }
-    return Observable.of(CRISES);
+    return of(CRISES);
   }
   deleteCrisis(crisisId: number): Observable<Crisis[]> {
     const pos = this.findCrisisPos(crisisId);
     CRISES.splice(pos, 1);
-    return Observable.of(CRISES);
+    return of(CRISES);
   }
 }

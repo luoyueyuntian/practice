@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
+import { Observable, of } from 'rxjs';
+import { delay } from 'rxjs/operators';
 
 const DEFAULT_LOGIN_STATUS = true;
 
@@ -23,10 +22,10 @@ export class AuthService {
   }
   login(): Observable<boolean> {
     this.loginStatus = true;
-    return Observable.of(this.loginStatus).delay(1500);
+    return of(this.loginStatus).pipe(delay(500));
   }
   logout(): Observable<boolean> {
     this.loginStatus = false;
-    return Observable.of(this.loginStatus).delay(500);
+    return of(this.loginStatus).pipe(delay(500));
   }
 }

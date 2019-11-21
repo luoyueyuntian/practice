@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import Hero from '../../model/hero';
 import { HeroService } from './../../service/hero.service';
 import Message from './../../model/message';
 import { MessageService } from './../../service/message.service';
+
 
 @Component({
   selector: 'app-hero-manage',
@@ -57,11 +58,10 @@ export class HeroManageComponent implements OnInit {
     if (this.newHeroName === '') {
       return;
     }
-    this.heroService.addHero(this.newHeroName)
-      .map(status => {
-        this.heroes = this.heroService.getHeroes();
-        this.newHeroName = '';
-      });
+    this.heroService.addHero(this.newHeroName).pipe(map(status => {
+      this.heroes = this.heroService.getHeroes();
+      this.newHeroName = '';
+    }));
   }
   save(): void {
     this.selectedHero.name = this.modifiedHeroName;

@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Subscription } from 'rxjs/Subscription';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/delay';
+import { Observable, Subject, BehaviorSubject, Subscription } from 'rxjs';
 
 import Message from './../model/message';
-import { Subject } from 'rxjs/Subject';
 
 import { AuthService } from './auth.service';
 
@@ -32,9 +27,9 @@ export class MessageService {
     }
     this._messages.push({
       id: this.unusedId++,
-      auth: auth,
+      auth,
       message: msg,
-      addressee: addressee
+      addressee
     });
     this.messages.next(this._messages);
   }
