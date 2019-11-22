@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk'
 import { createStore, applyMiddleware, compose } from 'redux'
-import createHistory from 'history/createBrowserHistory';
-import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
 
 import 'font-awesome/css/font-awesome.min.css';
 import './index.css';
@@ -20,21 +18,17 @@ initUnuesdHeroId(defaultState.heroes);
 initUnuesdCrisisId(defaultState.crisisLibary);
 initUnuesdMessageId(defaultState.msgs);
 
-const history = createHistory();
-const middleware = routerMiddleware(history);
 
 const store = createStore(
     reducer,
     defaultState,
     compose(
-        applyMiddleware(middleware, thunkMiddleware)
+        applyMiddleware( thunkMiddleware)
     ));
 
 ReactDOM.render(
     <Provider store={store}>
-	 <ConnectedRouter history={history} >
-		 <Home />
-	  </ConnectedRouter>
+        <Home />
 	</Provider>,
     document.getElementById('root'));
 registerServiceWorker();

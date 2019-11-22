@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import { Route } from 'react-router';
+import { BrowserRouter as Router, Switch, Route, NavLink } from "react-router-dom";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -12,6 +11,7 @@ class Home extends Component {
     render() {
         const { showContactPanel } = this.props;
         return (
+          <Router>
             <div className="container">
               <h1>Hero tour</h1>
               <div className="main-nav-container">
@@ -24,17 +24,20 @@ class Home extends Component {
                 </nav>
               </div>
               <div className="main">
-                  <Route path="/hero" component={Hero} />
-                  <Route path="/crisis-center" component={Crisis} />
-                  <Route path="/admin" component={Admin} />
-                  <Route path="/login" component={Login} />
-                  <Route path="/compose" component={Compose} />
-                  <Route exact path="/" component={Login} />
+                <Switch>
+                    <Route path="/hero" component={Hero} />
+                    <Route path="/crisis-center" component={Crisis} />
+                    <Route path="/admin" component={Admin} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/compose" component={Compose} />
+                    <Route exact path="/" component={Login} />
+                  </Switch>
               </div>
               <div className="popup-container">
                 <Compose />
               </div>
           </div>
+          </Router>
         );
     }
 }
