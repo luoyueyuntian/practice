@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
 
 import { heroesReducer } from './action-reducer/heroes';
 import { crisisLibaryReducer } from './action-reducer/crisisLibary';
@@ -19,8 +18,7 @@ export default combineReducers({
     curHeroId: selectedHeroIdReducer,
     curCrisisId: selectedCrisisIdReducer,
     showContact: displayContactPanelReducer,
-    displayLogIn: logInReducer,
-    router: routerReducer
+    displayLogIn: logInReducer
 });
 
 export {
